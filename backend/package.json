@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for online learning marcket place",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InternClub/online-learning-marketplace.git"
+  },
+  "author": "Devansh/Sudhanshu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InternClub/online-learning-marketplace/issues"
+  },
+  "homepage": "https://github.com/InternClub/online-learning-marketplace#readme"
+}
