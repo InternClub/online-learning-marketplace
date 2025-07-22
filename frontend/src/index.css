@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .primary {
+    @apply bg-white font-serif ;
+  }
+
+}
