@@ -1,3 +1,4 @@
+
 import React from "react";
 import Hero from "../../components/Hero/Hero";
 import Success from "../../components/Sections/Success";
@@ -12,3 +13,14 @@ const Homepage = () => {
 };
 
 export default Homepage;
+import React from 'react'
+
+const Homepage = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default Homepage

@@ -6,3 +6,10 @@
   }
 
 }
+
+@layer utilities{
+    .primary{
+        @apply bg-[#1f2833] text-white font-serif
+    }
+}
+
