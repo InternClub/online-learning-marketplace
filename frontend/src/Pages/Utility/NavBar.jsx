@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile",];
+  const isHidden = hiddenPaths.includes(location.pathname);
+
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
@@ -33,24 +37,35 @@ const NavBar = () => {
 
       {/* Navigation Buttons */}
       <div className="flex flex-wrap gap-2 items-center mr-40 mt-4 sm:mt-0 sm:flex-nowrap">
-        <button
-          className="px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500"
-          onClick={handleSearchClick}
+
+        <button 
+        className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
+        onClick={handleSearchClick}
+
+        
         >
           🔍 Search
         </button>
         <button
-          className="px-4 py-2 bg-green-400 text-white rounded hover:bg-green-500"
+          className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
           onClick={handleCourses}
         >
           Courses
         </button>
         <button
-          className="px-4 py-2 bg-green-400 text-white rounded hover:bg-green-500"
+          className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
           onClick={handleCoursesDetails}
         >
           Course Details
         </button>
+
+        <button
+          className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
+          onClick={handleLearnerCart}
+        >
+          Cart
+        </button>
+
 
         {!isLoggedIn ? (
           <>
@@ -69,9 +84,9 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <button
-              className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-              onClick={handleProfile}
+
+            <button className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
+             onClick={handleProfile}
             >
               Dashboard
             </button>

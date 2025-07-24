@@ -1,7 +1,15 @@
-import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
 
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom'
 const Footer = () => {
+  const location = useLocation();
+  const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile",];
+  const isHidden = hiddenPaths.includes(location.pathname);
+
+
+
+
 
 
     const navigate  = useNavigate();
@@ -9,7 +17,7 @@ const Footer = () => {
    const handleTMC = ()=> navigate('/tmc');
 
   return (
-    <div className='bg-blue-950 p-10 text-white'>
+    <div className={`bg-blue-950 p-10 text-white ${isHidden ? 'hidden' : ''}`}>
         <div className='flex items-center justify-center gap-10 mb-5 ' >
             <h3 className='h-5 gap-4 font-bold text-4xl text-shadow-2xs text-shadow-green-500 text-pink-400 ' >InternHub</h3>
             <img src="/Images/Line 10.png" alt="" />

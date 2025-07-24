@@ -6,7 +6,10 @@ import Login from "./Pages/System-level/Login";
 import PageNotFound from "./Pages/System-level/404";
 import ResetPassword from "./Pages/System-level/ResetPassword";
 import Homepage from "./Pages/Learner/Homepage";
-// import Loading from './Pages/System-level/Loading'
+
+
+import Footer from './Pages/Utility/Footer'
+
 import Courses from "./Pages/Learner/Courses";
 import CourseDetails from "./Pages/Learner/CourseDetails";
 import Profile from "./Pages/Learner/Profile";
@@ -17,10 +20,11 @@ import PrivacyPolicy from "./TMC/Privacy";
 import TermsAndConditions from "./TMC/TMC";
 import CourseLessonView from './Components/Classroom/ClassSchedule'
 
+
 function App() {
   return (
     <div className="primary">
-      {/* <Loading /> */}
+
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -44,6 +48,7 @@ function App() {
           <Route path="/classSchedule" element={<CourseLessonView />} />
         </Routes>
       </BrowserRouter>
+
     </div>
   );
 }

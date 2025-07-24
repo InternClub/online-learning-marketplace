@@ -38,28 +38,28 @@ const ResetPassword = () => {
 
   const resetPasswordHandler = async () => {
     console.log(`Verifying OTP: ${otp} & Setting New Password`);
-    alert("Password has been succesfully reset!");
+    alert("Password has been successfully reset!");
   };
 
   return (
-    <div className="flex items-center justify-center flex-col h-[91.4vh] w-full overflow-hidden">
-      <div className="flex items-center justify-center flex-col">
-        <h2 className="text-4xl font-bold text-amber-300 ">Reset Password</h2>
-        {error && <p className="text-red-500 mb-2"> {error}</p>}
+    <div className="flex items-center justify-center flex-col min-h-screen w-full px-4 sm:px-8 overflow-x-hidden">
+      <div className="flex items-center justify-center flex-col w-full max-w-xl">
+        <h2 className="text-3xl sm:text-4xl font-bold text-amber-300 text-center">Reset Password</h2>
+        {error && <p className="text-red-500 mb-2 text-center"> {error}</p>}
 
         {step === 1 && (
           <>
-            <div className="flex items-center justify-between gap-2 mt-10">
-              <label>Enter your email: </label>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 mt-10 w-full">
+              <label className="mb-1 sm:mb-0 sm:w-auto">Enter your email:</label>
               <input
                 type="email"
-                className="border-2 text-amber-200 rounded-l w-70 placeholder:items-center placeholder:text-amber-300 "
-                placeholder="you@example.cpm"
+                className="border-2 text-amber-200 rounded w-full sm:w-72 placeholder:items-center placeholder:text-amber-300"
+                placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="flex items-center justify-center bg-amber-400 rounded-2xl mt-5 w-25 h-15 cursor-pointer ">
+            <div className="flex items-center justify-center bg-amber-400 rounded-2xl mt-5 px-6 py-2 cursor-pointer">
               <button className="cursor-pointer" onClick={sendOtpHandle}>
                 Send OTP
               </button>
@@ -69,49 +69,55 @@ const ResetPassword = () => {
 
         {step === 2 && (
           <>
-            <div className="flex flex-col items-center justify-center mt-4">
-              <div className="flex items-center justify-between gap-3">
-                <label>Enter OTP: </label>
+            <div className="flex flex-col items-center justify-center mt-4 w-full">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 w-full">
+                <label>Enter OTP:</label>
                 <input
-                  className="border-2 text-amber-200 rounded w-40 placeholder:items-center placeholder:text-amber-300"
+                  className="border-2 text-amber-200 rounded w-full sm:w-40 placeholder:items-center placeholder:text-amber-300"
                   type="text"
                   placeholder="Enter OTP"
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
                 />
-                <button className="bg-red-500 rounded cursor-pointer w-25 h-8">Verify OTP</button>
+                <button className="bg-red-500 rounded cursor-pointer px-4 py-1 mt-2 sm:mt-0">Verify OTP</button>
               </div>
-              <div className="border-4 border-amber-200 h-30 p-6 mt-5 ">
-                <div className="text-xl gap-3 mb-3 ">
-                  <label>New Password:  </label>
+
+              <div className="border-4 border-amber-200 w-full p-4 mt-5 rounded-lg">
+                <div className="mb-4">
+                  <label className="block text-xl mb-2">New Password:</label>
                   <input
-                    className="border-2 text-amber-200 rounded w-70 placeholder:items-center placeholder:text-amber-300"
+                    className="border-2 text-amber-200 rounded w-full placeholder:items-center placeholder:text-amber-300"
                     type="password"
                     placeholder="New password..."
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
                   />
                 </div>
-                <div className="text-xl gap-3 mt-3">
-                  <label>Confirm New Password: </label>
+                <div className="mt-3">
+                  <label className="block text-xl mb-2">Confirm New Password:</label>
                   <input
-                  className="border-2 text-amber-200 rounded w-70 placeholder:items-center placeholder:text-amber-300"
+                    className="border-2 text-amber-200 rounded w-full placeholder:items-center placeholder:text-amber-300"
                     type="password"
                     placeholder="Confirm password..."
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
-                </div>{" "}
+                </div>
               </div>
-              <div className="gap-10 mt-4 items-center flex justify-between">
-                <button 
-                onClick={resetPasswordHandler}
-                className="bg-red-500 cursor-pointer rounded-xl w-35 h-15"
-                >Reset Password</button>
-                <button 
-                onClick={resendOtpHandler} 
-                disabled={resendDisabled}
-                className="bg-red-500 cursor-pointer rounded-xl w-40 h-15"
+
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                <button
+                  onClick={resetPasswordHandler}
+                  className="bg-red-500 cursor-pointer rounded-xl px-5 py-2 w-full sm:w-40"
+                >
+                  Reset Password
+                </button>
+                <button
+                  onClick={resendOtpHandler}
+                  disabled={resendDisabled}
+                  className={`bg-red-500 cursor-pointer rounded-xl px-5 py-2 w-full sm:w-48 ${
+                    resendDisabled ? "opacity-60 cursor-not-allowed" : ""
+                  }`}
                 >
                   {resendDisabled ? `Resend OTP in ${timer}s` : "Resend OTP"}
                 </button>
