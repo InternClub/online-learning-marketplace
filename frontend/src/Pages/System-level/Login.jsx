@@ -10,6 +10,7 @@ const Login = () => {
 
   const toggleTheme = () => setDarkMode(!darkMode);
   const handleResetClick = () => navigate("/resetpassword");
+  const handleHome = () => navigate('/profile');
 
   return (
     <div
@@ -94,6 +95,7 @@ const Login = () => {
             className={`px-6 py-2 rounded-xl cursor-pointer ${
               darkMode ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"
             }`}
+            onClick={handleHome}
           >
             Login
           </button>
