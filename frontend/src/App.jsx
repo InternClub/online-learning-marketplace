@@ -9,6 +9,7 @@ import Homepage from './Pages/Learner/Homepage'
 // import Loading from './Pages/System-level/Loading'
 import Courses from './Pages/Learner/Courses'
 import CourseDetails from './Pages/Learner/CourseDetails'
+import Profile from './Pages/Learner/Profile'
 
 function App() {
   
@@ -20,12 +21,13 @@ function App() {
     <NavBar />
           <Routes>
             <Route path='*' element={<PageNotFound />} />
-            <Route path='/home' element={<Homepage />} />
+            <Route index path='/' element={<Homepage />} />
             <Route path='/courses' element={<Courses />} />
             <Route path='/coursedetails' element={<CourseDetails />} />
             <Route path='/register' element={<Register />} />
             <Route path='/login' element={<Login />} />
             <Route path='/resetpassword' element={<ResetPassword />} />
+            <Route path='/profile' element={<Profile />} />
           </Routes>
     </BrowserRouter>
     </div>
