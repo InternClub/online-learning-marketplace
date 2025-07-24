@@ -15,6 +15,7 @@ import Profile from './Pages/Learner/Profile'
 import Search from './Components/Search/Search'
 import CourseCatalog from './Pages/Learner/CourseCatalog'
 import LearnerCart from './Pages/Learner/Cart'
+import Footer from './Pages/Utility/Footer'
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
             <Route path='/resetpassword' element={<ResetPassword />} />
             <Route path='/profile' element={<Profile />} />
           </Routes>
+    <Footer />
     </BrowserRouter>
     </div>
   )

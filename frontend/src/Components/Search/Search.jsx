@@ -383,7 +383,7 @@ const Search = () => {
         </div>
       </div>
 
-      <Footer />
+      
     </section>
   );
 };

@@ -91,6 +91,7 @@ const offers = [
 ];
 
 const CourseDetails = () => {
+  
   return (
     <div className="bg-white">
       <div className="p-6 bg-white text-gray-800 max-w-7xl mx-auto">
@@ -294,7 +295,7 @@ const CourseDetails = () => {
             ))}
           </div>
         </div>
-    <Footer />
+    
     </div>
   );
 };

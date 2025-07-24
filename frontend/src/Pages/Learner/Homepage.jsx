@@ -16,7 +16,7 @@ const Homepage = () => {
         <Platform/>
         <Features />
       </div>
-      <Footer />
+      
     </div>
   );
 };

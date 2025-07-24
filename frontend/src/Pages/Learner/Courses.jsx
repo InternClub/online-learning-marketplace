@@ -73,6 +73,9 @@ const courses = [
 
 const Courses = () => {
   const navigate=  useNavigate();
+  const handleCourseTap = (title) => {
+    navigate("/coursecatlog", { state: title });
+  };
   const handleCourseCatlog=()=> navigate('/coursecatlog')
 
   return (
@@ -126,6 +129,7 @@ const Courses = () => {
       <div
         key={index}
         className="p-6 rounded-xl shadow backdrop-blur-md bg-white hover:scale-105 transition"
+        onClick={() => handleCourseTap(cat.title)}
       >
         <div className="text-3xl mb-3">{cat.icon}</div>
         <h3 className="text-lg font-semibold">{cat.title}</h3>
@@ -220,7 +224,7 @@ const Courses = () => {
           </button>
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 };
