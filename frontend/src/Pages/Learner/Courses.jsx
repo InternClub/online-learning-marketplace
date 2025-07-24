@@ -3,6 +3,7 @@ import Course1 from "/Images/Group40.png";
 import Course2 from "/Images/Group41.png";
 import Course3 from "/Images/Group42.png";
 import Footer from "../Utility/Footer";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const categories = [
   { title: "Design", icon: "🎨" },
@@ -71,6 +72,9 @@ const courses = [
 ];
 
 const Courses = () => {
+  const navigate=  useNavigate();
+  const handleCourseCatlog=()=> navigate('/coursecatlog')
+
   return (
     <div className="bg-white text-black ">
       {/* History */}
@@ -97,6 +101,7 @@ const Courses = () => {
         <div className="flex w-full h-1.5 rounded overflow-hidden">
           <div className={`w-[${(i + 1) * 30}%] bg-green-500`}></div>
           <div className={`w-[${70-(i+1)* 20}%] bg-green-500`}></div>
+          <div className={`w-[${70-(i + 1) *0}%] bg-green-500`}></div>
           <div className={`w-[${70-(i + 1) *0}%] bg-gray-400`}></div>
           <div className={`w-[${100 - (i + 1) * 30}%] bg-gray-400`}></div>
         </div>
@@ -208,7 +213,9 @@ const Courses = () => {
           <p className="text-gray-300 font-mono">
             sitamet, consectetur adipiscing elit, sed do eiusmod tempor
           </p>
-          <button className="bg-[#49BBBD] m-2 p-2 rounded hover:bg-green-500 cursor-pointer">
+          <button className="bg-[#49BBBD] m-2 p-2 rounded hover:bg-green-500 cursor-pointer"
+          onClick={handleCourseCatlog}
+          >
             Start Learning Now
           </button>
         </div>

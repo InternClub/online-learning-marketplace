@@ -61,23 +61,32 @@ const offers = [
   {
     title: "FOR INSTRUCTORS",
     discount: "50%",
-    description:
-    "TOTC's school management software helps traditional and online schools manage scheduling.",
+    description:"InterClub's school management software helps traditional and online schools manage scheduling.",
+
+    
     image: "/Images/Rectangle19.png",
+
+    
+
+  },
+  {
+    title: "FOR INSTRUCTORS",
+    discount: "50%",
+    description:"InterClub's school management software helps traditional and online schools manage scheduling.",
+    image: "/Images/Rectangle19.png",
+
+    
+  
+
   },
   {
     title: "FOR INSTRUCTORS",
     discount: "50%",
     description:
-    "TOTC's school management software helps traditional and online schools manage scheduling.",
+
+    "InterClub's school management software helps traditional and online schools manage scheduling.",
     image: "/Images/Rectangle19.png",
-  },
-  {
-    title: "FOR INSTRUCTORS",
-    discount: "50%",
-    description:
-    "TOTC's school management software helps traditional and online schools manage scheduling.",
-    image: "/Images/Rectangle19.png",
+
   },
 ];
 
@@ -239,7 +248,9 @@ const CourseDetails = () => {
         </div>
       </div>
 
+
       <Classroom />
+
 
         {/* Offer Cards */}
         <div className="px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto  p-10 bg-white text-gray-800">
