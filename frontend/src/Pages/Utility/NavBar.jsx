@@ -33,7 +33,7 @@ const NavBar = () => {
         onClick={handleHomePage}
         className="text-xl font-bold text-green-500 cursor-pointer"
       >
-        InternHub
+        <img src="/Images/logoIC.png" className="h-10 w-10" />
       </div>
 
       {/* Navigation Buttons */}
