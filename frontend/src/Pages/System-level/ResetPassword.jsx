@@ -69,37 +69,50 @@ const ResetPassword = () => {
 
         {step === 2 && (
           <>
-            <div className="flex flex-col items-center justify-center">
-              <div>
-                <label>Enter OTP</label>
+            <div className="flex flex-col items-center justify-center mt-4">
+              <div className="flex items-center justify-between gap-3">
+                <label>Enter OTP: </label>
                 <input
+                  className="border-2 text-amber-200 rounded w-40 placeholder:items-center placeholder:text-amber-300"
                   type="text"
                   placeholder="Enter OTP"
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
                 />
+                <button className="bg-red-500 rounded cursor-pointer w-25 h-8">Verify OTP</button>
               </div>
-              <div>
-                <label>New Password</label>
-                <input
-                  type="password"
-                  placeholder="New password..."
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                />
+              <div className="border-4 border-amber-200 h-30 p-6 mt-5 ">
+                <div className="text-xl gap-3 mb-3 ">
+                  <label>New Password:  </label>
+                  <input
+                    className="border-2 text-amber-200 rounded w-70 placeholder:items-center placeholder:text-amber-300"
+                    type="password"
+                    placeholder="New password..."
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                  />
+                </div>
+                <div className="text-xl gap-3 mt-3">
+                  <label>Confirm New Password: </label>
+                  <input
+                  className="border-2 text-amber-200 rounded w-70 placeholder:items-center placeholder:text-amber-300"
+                    type="password"
+                    placeholder="Confirm password..."
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </div>{" "}
               </div>
-              <div>
-                <label>Confirm New Password</label>
-                <input
-                  type="password"
-                  placeholder="Confirm password..."
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-              </div>{" "}
-              <div>
-                <button onClick={resetPasswordHandler}>Reset Password</button>
-                <button onClick={resendOtpHandler} disabled={resendDisabled}>
+              <div className="gap-10 mt-4 items-center flex justify-between">
+                <button 
+                onClick={resetPasswordHandler}
+                className="bg-red-500 cursor-pointer rounded-xl w-35 h-15"
+                >Reset Password</button>
+                <button 
+                onClick={resendOtpHandler} 
+                disabled={resendDisabled}
+                className="bg-red-500 cursor-pointer rounded-xl w-40 h-15"
+                >
                   {resendDisabled ? `Resend OTP in ${timer}s` : "Resend OTP"}
                 </button>
               </div>
