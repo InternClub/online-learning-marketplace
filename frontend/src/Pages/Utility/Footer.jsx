@@ -1,6 +1,13 @@
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+
+
+    const navigate  = useNavigate();
+   const handlePrivacy = ()=> navigate('/policy');
+   const handleTMC = ()=> navigate('/tmc');
+
   return (
     <div className='bg-blue-950 p-10 text-white'>
         <div className='flex items-center justify-center gap-10 mb-5 ' >
@@ -23,9 +30,13 @@ const Footer = () => {
             <div className='flex items-center justify-center flex-row gap-4 mb-3 '>
                 <p className='hover:text-blue-700 hover:underline cursor-pointer'>Careers</p>
                 <p className='hover:text-blue-700 hover:underline cursor-pointer'>|</p>
-                <p className='hover:text-blue-700 hover:underline cursor-pointer'>Privacy Policy</p>
+                <p className='hover:text-blue-700 hover:underline cursor-pointer'
+                onClick={handlePrivacy}
+                >Privacy Policy</p>
                 <p className='hover:text-blue-700 hover:underline cursor-pointer'>|</p>
-                <p className='hover:text-blue-700 hover:underline cursor-pointer'>Terms & Conditions</p>
+                <p className='hover:text-blue-700 hover:underline cursor-pointer'
+                onClick={handleTMC}
+                >Terms & Conditions</p>
             </div>
             <p className='flex items-center justify-center'>&copy; 2025 InternHub Pvt. Ltd.</p>
         </div>
