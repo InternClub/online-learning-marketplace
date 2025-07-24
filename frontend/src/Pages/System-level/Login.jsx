@@ -88,15 +88,15 @@ const Login = () => {
         </div>
         <div className="mt-4 flex items-center justify-center gap-3">
           <button
-            className={`px-6 py-2 rounded-xl ${
+            className={`px-6 py-2 rounded-xl cursor-pointer ${
               darkMode ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"
             }`}
           >
             Login
           </button>
            <button
-            className={`px-6 py-2 rounded-xl ${
-              darkMode ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"
+            className={`px-6 py-2 rounded-xl cursor-pointer ${
+              darkMode ? "bg-red-500 text-black" : "bg-blue-500 text-white"
             }`}
             onClick={handleResetClick}
           >

@@ -7,7 +7,6 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
@@ -21,19 +20,22 @@ const Register = () => {
       {/* Theme Toggle Button */}
       <button
         onClick={toggleTheme}
-        className="absolute top-4 right-4 px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300"
+        className="darkmode absolute top-4 right-4 px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300"
       >
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
 
       {/* Left Image Side */}
-      <div className="flex h-[550px] w-[500px] left-20 relative ">
-        <div className="flex">
-          <img src={RegisterImg} />
-        </div>
-        <div className="flex absolute top-[65%] left-[35%]">
+      <div className="w-full max-w-md lg:w-[500px] relative">
+        <img
+          src={RegisterImg}
+          className="w-full h-auto object-cover rounded-md"
+        />
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
           <p>
-            <b className="text-xl text-[#c5c6c7]">Lorem ipsum dolor sit.</b>
+            <b className="text-lg sm:text-xl text-[#c5c6c7]">
+              Lorem ipsum dolor sit.
+            </b>
             <br />
             <i className="text-yellow-400">adipisicing elit. Ea, temporibus.</i>
           </p>
@@ -61,7 +63,7 @@ const Register = () => {
             <label>Full Name:</label>
             <input
               type="text"
-            //   {...register("text", { required: true })}
+              //   {...register("text", { required: true })}
               placeholder="Enter your full name..."
               className="w-full p-2 rounded border placeholder:text-[#45a29e] "
             />
@@ -78,7 +80,7 @@ const Register = () => {
             <label>Email:</label>
             <input
               type="email"
-            //   {...register("email", { required: true })}
+              //   {...register("email", { required: true })}
               placeholder="Enter your email..."
               className="w-full p-2 rounded border placeholder:text-[#45a29e] "
             />
@@ -86,8 +88,9 @@ const Register = () => {
           <div>
             <label>Password:</label>
             <input
-              type={showPassword? "text":"password"}
+              type={showPassword ? "text" : "password"}
               required={true}
+              placeholder="Enter your password"
               className="w-full p-2 rounded border placeholder:text-[#45a29e] relative"
             />
             <span
@@ -100,8 +103,8 @@ const Register = () => {
           <div>
             <label>Confirm Password:</label>
             <input
-              type={showConfirmPassword?"text":"password"}
-            //   {...register("password", { required: true })}
+              type={showConfirmPassword ? "text" : "password"}
+              //   {...register("password", { required: true })}
               placeholder="Confirm your password..."
               className="w-full p-2 rounded border placeholder:text-[#45a29e] "
             />
@@ -115,7 +118,7 @@ const Register = () => {
         </div>
         <div className="mt-4 flex items-center justify-center">
           <button
-            className={`px-6 py-2 rounded-xl ${
+            className={`px-6 py-2 rounded-xl cursor-pointer ${
               darkMode ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"
             }`}
           >
@@ -128,3 +131,4 @@ const Register = () => {
 };
 
 export default Register;
+
