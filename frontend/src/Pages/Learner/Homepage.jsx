@@ -12,7 +12,6 @@ const Homepage = () => {
         <Success />
         <Features />
       </div>
-
       <Footer />
     </div>
   );
