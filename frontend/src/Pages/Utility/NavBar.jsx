@@ -14,9 +14,15 @@ const NavBar = () => {
     navigate("/login");
   };
 
+  const handleSignupToggle = () => navigate('/register');
+  const handleHomePage = () => navigate('/');
+  const handleCourses = () => navigate('/courses');
+  const handleCoursesDetails = () => navigate('/coursedetails');
+
+
   const handleSearchClick = () => navigate("/search");
   const handleSignupToggle = () => navigate("/register");
-  const handleHomePage = () => navigate("/home");
+  const handleHomePage = () => navigate("/");
   const handleCourses = () => navigate("/courses");
   const handleCoursesDetails = () => navigate("/coursedetails");
   const handleLearnerCart = () => navigate("/lernercart");
