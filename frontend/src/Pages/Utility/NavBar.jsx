@@ -23,8 +23,7 @@ const NavBar = () => {
   const handleHomePage = () => navigate("/");
   const handleCourses = () => navigate("/courses");
   const handleCoursesDetails = () => navigate("/coursedetails");
-  const handleLearnerCart = () => navigate("/lernercart");
-
+  const handleProfile = () => navigate("/lernerprofile");
 
   return (
     <nav className="flex flex-wrap items-center justify-between p-4 bg-white shadow-md">
@@ -36,20 +35,16 @@ const NavBar = () => {
         InternHub
       </div>
 
-      {/* Search */}
-      {/* <div className="justify-end items-center flex py-3 px-3 rounded-2xl bg-green-400 hover:bg-green-500 ">
-        <button 
-        onClick={handleSearchClick}
-        >Search</button>
-      </div> */}
-
       {/* Navigation Buttons */}
       <div className="flex flex-wrap gap-2 items-center mr-40 mt-4 sm:mt-0 sm:flex-nowrap">
+
         <button 
         className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
         onClick={handleSearchClick}
+
+        
         >
-         🔍 Search
+          🔍 Search
         </button>
         <button
           className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
@@ -63,12 +58,14 @@ const NavBar = () => {
         >
           Course Details
         </button>
+
         <button
           className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
           onClick={handleLearnerCart}
         >
           Cart
         </button>
+
 
         {!isLoggedIn ? (
           <>
@@ -87,7 +84,10 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <button className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}>
+
+            <button className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
+             onClick={handleProfile}
+            >
               Dashboard
             </button>
             <button

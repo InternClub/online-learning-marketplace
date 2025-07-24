@@ -1,11 +1,20 @@
+
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
-
+import { Navigate, useNavigate } from 'react-router-dom'
 const Footer = () => {
   const location = useLocation();
   const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile",];
   const isHidden = hiddenPaths.includes(location.pathname);
 
+
+
+
+
+
+    const navigate  = useNavigate();
+   const handlePrivacy = ()=> navigate('/policy');
+   const handleTMC = ()=> navigate('/tmc');
 
   return (
     <div className={`bg-blue-950 p-10 text-white ${isHidden ? 'hidden' : ''}`}>
@@ -29,9 +38,13 @@ const Footer = () => {
             <div className='flex items-center justify-center flex-row gap-4 mb-3 '>
                 <p className='hover:text-blue-700 hover:underline cursor-pointer'>Careers</p>
                 <p className='hover:text-blue-700 hover:underline cursor-pointer'>|</p>
-                <p className='hover:text-blue-700 hover:underline cursor-pointer'>Privacy Policy</p>
+                <p className='hover:text-blue-700 hover:underline cursor-pointer'
+                onClick={handlePrivacy}
+                >Privacy Policy</p>
                 <p className='hover:text-blue-700 hover:underline cursor-pointer'>|</p>
-                <p className='hover:text-blue-700 hover:underline cursor-pointer'>Terms & Conditions</p>
+                <p className='hover:text-blue-700 hover:underline cursor-pointer'
+                onClick={handleTMC}
+                >Terms & Conditions</p>
             </div>
             <p className='flex items-center justify-center'>&copy; 2025 InternHub Pvt. Ltd.</p>
         </div>

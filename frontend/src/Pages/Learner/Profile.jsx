@@ -1,7 +1,12 @@
 import React from "react";
 import image8 from "/Images/image8.png";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
+  const navigate = useNavigate();
+  const handleLearnerCart = () => navigate("/lernercart");
+  const handleClassSchedule =()=> navigate('/classSchedule')
+
   const certificates = [
     {
       id: 1,
@@ -45,10 +50,17 @@ const Profile = () => {
         <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl">
           Wishlist
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl">
+        <button
+          className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+          onClick={handleLearnerCart}
+        >
           Cart
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl">
+
+        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+        onClick={handleClassSchedule}
+        >
+
           Schedule
         </button>
       </div>
@@ -81,9 +93,11 @@ const Profile = () => {
         </div>
 
         {/* certificates */}
-        <p className="text-lg text-[#d1d7fc] mt-10">Certificates:</p>
+
+        <p className="text-lg text-[#d1d7fc] mt-5">Certificates:</p>
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-4 w-full px-2 overflow-y-scroll pt-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-2 w-full px-5 overflow-y-scroll pt-5"
+
           style={{
             scrollbarWidth: "thin",
             scrollbarColor: "#9DCCFF transparent",
