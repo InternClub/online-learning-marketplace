@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../../Pages/Utility/Footer";
 
 const courses = [
@@ -69,7 +69,7 @@ const courses = [
     image: "/Images/Group42.png",
   },
   {
-    title: "AWS Certified Solutions Architect",
+    title: "AWS Certified design Architect",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
     instructor: "Lina",
@@ -163,6 +163,12 @@ const offers = [
 ];
 
 const Search = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredCourses = courses.filter((course) =>
+  course.title.toLowerCase().includes(searchQuery.toLowerCase())
+);
+
   return (
     <section className="w-full  bg-white">
       {/* hero section */}
@@ -179,6 +185,8 @@ const Search = () => {
             <input
               type="search"
               placeholder="Search your favourite course"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="flex-grow px-4 py-2  bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button className="px-5 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-all cursor-pointer ">
@@ -211,7 +219,7 @@ const Search = () => {
       {/* course section */}
       <div className="mt-10 ml-15 mr-15 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6  ">
-          {courses.map((course, idx) => (
+          {filteredCourses.map((course, idx) => (
             <div
               key={idx}
               className="bg-gray-100 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
