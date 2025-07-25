@@ -5,9 +5,9 @@ const CourseCatalog = () => {
   const title = useLocation().state;
   const [searchTerm, setSearchTerm] = useState(title || "");
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log("Search term updated:", title);
-  },[])
+  }, []);
 
   const courses = [
     {
@@ -198,6 +198,16 @@ const CourseCatalog = () => {
                 <div className="flex justify-between text-xs text-gray-500 mt-2">
                   <span>{course.duration}</span>
                   <span>{course.category}</span>
+                </div>
+                <div className="pt-3">
+                  <button
+                    onClick={() =>
+                      console.log(`Added to wishlist: ${course.title}`)
+                    }
+                    className="w-full bg-white text-black py-2 rounded hover:shadow-lg text-sm"
+                  >
+                    ❤️ Add to Wishlist
+                  </button>
                 </div>
               </div>
             </div>
