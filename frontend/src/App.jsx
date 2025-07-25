@@ -22,8 +22,11 @@ import Wishlist from "./Pages/Learner/Wishlist";
 
 
 function App() {
+  const initialTheme = localStorage.getItem("themeMode") || "light";
+  
+
   return (
-    <div className="primary">
+    <div className={`primary ${initialTheme === "dark" ? "bg-black" : "light"}`}>
       <BrowserRouter>
         <NavBar />
         <Routes>
