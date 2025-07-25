@@ -9,7 +9,7 @@ import Platform from "../../components/Platform/Platform";
 const Homepage = () => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center h-[100] w-full">
+      <div className="flex flex-col items-center justify-center h-full w-full">
         <Hero />
         <Success />
         <Classroom/>

@@ -6,7 +6,7 @@ import group9 from "/Images/Group 9.png";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-screen justify-center items-center shadow-lg rounded-b-[5rem] sm:rounded-b-[10rem] lg:rounded-b-[15rem] px-4 sm:px-6 lg:px-12 bg-[#49BBBD] overflow-hidden">
+    <div className="flex flex-col lg:flex-row w-full min-h-[100vh] justify-center items-center shadow-lg rounded-b-[5rem] sm:rounded-b-[10rem] lg:rounded-b-[15rem] px-4 sm:px-6 lg:px-12 bg-[#49BBBD] overflow-hidden">
       
       {/* Left Section */}
       <div className="flex w-full lg:w-1/2 h-auto py-12 lg:py-0">
