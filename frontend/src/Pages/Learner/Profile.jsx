@@ -10,6 +10,9 @@ const Profile = () => {
   const handleLearnerCart = () => navigate("/lernercart");
   const handleClassSchedule =()=> navigate('/classSchedule')
   const handleWishlist=()=> navigate('/learnerwishlist')
+  const handleLearnerProgress = ()=> navigate('/learnerProgress')
+  const handleMyCourses = ()=> navigate('/myCourses')
+  const handleDailyGoals = ()=> navigate('/dailygoals')
 
 
   const certificates = [
@@ -49,7 +52,9 @@ const Profile = () => {
     <div className="flex flex-col lg:flex-row w-full min-h-[100vh] bg-[#0756a9] p-2 overflow-x-hidden">
       {/* Sidebar */}
       <div className="flex flex-col w-full lg:w-[25%] bg-[#ffffff] rounded-2xl py-10 px-4 gap-5 mb-5 lg:mb-0">
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl">
+        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+        onClick={handleMyCourses}
+        >
           My Courses
         </button>
         <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
@@ -70,7 +75,19 @@ const Profile = () => {
 
           Schedule
         </button>
+        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+        onClick={handleLearnerProgress}
+        >
+
+          Progress
+        </button>
+        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+        onClick={handleDailyGoals}
+        >
+          Daily Goals
+        </button>
       </div>
+
 
       {/* Main Content */}
       <div className="flex flex-col w-full lg:w-[75%] h-full px-4">
