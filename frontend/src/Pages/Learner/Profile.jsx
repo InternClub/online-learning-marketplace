@@ -41,7 +41,7 @@ const Profile = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-screen bg-[#0756a9] p-2 overflow-x-hidden">
+    <div className="flex flex-col lg:flex-row w-full min-h-[100vh] bg-[#0756a9] p-2 overflow-x-hidden">
       {/* Sidebar */}
       <div className="flex flex-col w-full lg:w-[25%] bg-[#ffffff] rounded-2xl py-10 px-4 gap-5 mb-5 lg:mb-0">
         <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl">

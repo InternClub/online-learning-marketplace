@@ -42,7 +42,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen w-full px-4 sm:px-8 overflow-x-hidden">
+    <div className="flex items-center justify-center flex-col min-h-[100vh] w-full px-4 sm:px-8 overflow-x-hidden">
       <div className="flex items-center justify-center flex-col w-full max-w-xl">
         <h2 className="text-3xl sm:text-4xl font-bold text-amber-300 text-center">Reset Password</h2>
         {error && <p className="text-red-500 mb-2 text-center"> {error}</p>}
