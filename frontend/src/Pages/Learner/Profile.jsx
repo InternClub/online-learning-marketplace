@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import image8 from "/Images/image8.png";
 import { useNavigate } from "react-router-dom";
+import EditProfileModal from "../../Components/Modal/EditProfileModal";
+
 
 const Profile = () => {
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const handleLearnerCart = () => navigate("/lernercart");
   const handleClassSchedule =()=> navigate('/classSchedule')
+  const handleWishlist=()=> navigate('/learnerwishlist')
+
 
   const certificates = [
     {
@@ -47,7 +52,9 @@ const Profile = () => {
         <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl">
           My Courses
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl">
+        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+        onClick={handleWishlist}
+        >
           Wishlist
         </button>
         <button
@@ -77,9 +84,12 @@ const Profile = () => {
               <p className="text-lg text-[#d1d7fc]">Phone: (123) 456-7890</p>
               <p className="text-lg text-[#d1d7fc]">Address: 123 Main St, City, Country</p>
               <p className="text-lg text-[#d1d7fc]">Bio: Passionate about learning and teaching.</p>
-              <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl mt-5">
-                Edit Profile
-              </button>
+              
+
+              <div>
+      <button onClick={() => setShowModal(true)} className="bg-teal-600 text-white px-4 py-2 rounded">Edit Profile</button>
+      <EditProfileModal isOpen={showModal} onClose={() => setShowModal(false)} />
+    </div>
             </div>
 
             <div className="flex w-full md:w-[40%] justify-center md:justify-end items-center">

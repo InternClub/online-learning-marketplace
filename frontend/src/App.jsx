@@ -18,6 +18,8 @@ import LearnerCart from "./Pages/Learner/Cart";
 import PrivacyPolicy from "./TMC/Privacy";
 import TermsAndConditions from "./TMC/TMC";
 import CourseLessonView from "./Components/Classroom/ClassSchedule";
+import Wishlist from "./Pages/Learner/Wishlist";
+
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
           <Route path="/tmc" element={<TermsAndConditions />} />
           <Route path="/lernerprofile" element={<Profile />} />
           <Route path="/classSchedule" element={<CourseLessonView />} />
+          <Route path="/learnerwishlist" element={<Wishlist />} />
+          
         </Routes>
         <Footer />
       </BrowserRouter>
