@@ -19,6 +19,9 @@ import PrivacyPolicy from "./TMC/Privacy";
 import TermsAndConditions from "./TMC/TMC";
 import CourseLessonView from "./Components/Classroom/ClassSchedule";
 import Wishlist from "./Pages/Learner/Wishlist";
+import Progress from "./Pages/Learner/Progress";
+import MyCourses from "./Pages/Learner/MyCourses";
+import DailyGoals from "./Pages/Learner/DailyGoals";
 
 
 function App() {
@@ -49,6 +52,9 @@ function App() {
           <Route path="/lernerprofile" element={<Profile />} />
           <Route path="/classSchedule" element={<CourseLessonView />} />
           <Route path="/learnerwishlist" element={<Wishlist />} />
+          <Route path="/learnerProgress" element={<Progress />} />
+          <Route path="/myCourses" element={<MyCourses />} />
+          <Route path="/dailygoals" element={<DailyGoals />} />
           
         </Routes>
         <Footer />
