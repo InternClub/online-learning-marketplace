@@ -60,10 +60,10 @@ const TermsAndConditions = () => {
           <p>
             For any questions, reach out to us at{" "}
             <a
-              href="mailto:support@learnercart.com"
+              href="mailto:internclubmern@gmail.com"
               className="text-blue-600 underline"
             >
-              support@interclub.com
+              support@internclub.com
             </a>
             .
           </p>

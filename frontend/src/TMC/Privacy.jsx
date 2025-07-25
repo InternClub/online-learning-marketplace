@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
         </ul>
 
         <p>
-          If you have any questions, feel free to contact us at <a href="mailto:privacy@learnercart.com" className="text-blue-600 underline">privacy@internclub.com</a>.
+          If you have any questions, feel free to contact us at <a href="mailto:internclubmern@gmail.com" className="text-blue-600 underline">privacy@internclub.com</a>.
         </p>
       </div>
     </div>
