@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useSelector,useDispatch} from "react-redux";
+import { toggleTheme } from "../../Store/API/themeSlice";
 
 const NavBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile",];
   const isHidden = hiddenPaths.includes(location.pathname);
+  const mode = useSelector((state) => state.theme.mode);
+  const dispatch = useDispatch();
 
+  const ToggleTheme = () => {
+    // setDarkMode(!darkMode);
+    dispatch(toggleTheme());
+    // console.log("noob");
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
   };
   const handleLoggedinToggle = () => {
     setIsLoggedIn(!isLoggedIn);
@@ -25,6 +31,10 @@ const NavBar = () => {
   const handleCoursesDetails = () => navigate("/coursedetails");
   const handleProfile = () => navigate("/lernerprofile");
   // const handleLearnerCart = () => navigate("/lernercart");
+
+  useEffect(()=>{
+    localStorage.setItem("themeMode",mode)
+  },[mode])
 
   return (
     <nav className="flex flex-wrap items-center justify-between p-4 bg-white shadow-md">
@@ -95,10 +105,10 @@ const NavBar = () => {
         )}
       </div>
       <button
-        onClick={toggleTheme}
-        className="darkmode absolute top-4 right-4 px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300"
+        onClick={ToggleTheme}
+        className="darkmode absolute top-4 right-4 px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300 ease-in-out"
       >
-        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        {mode === "dark" ? "🌞" : "🌚"}
       </button>
     </nav>
   );

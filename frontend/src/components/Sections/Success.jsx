@@ -78,7 +78,7 @@ const Success = () => {
         ].map((feature, index) => (
           <div
             key={index}
-            className="flex flex-col w-full h-auto shadow-2xl rounded-2xl justify-start items-center px-5 pt-14 pb-6 relative bg-white"
+            className="flex flex-col w-full h-auto shadow-2xl rounded-2xl justify-start items-center px-5 pt-14 pb-6 relative "
           >
             <img
               src={feature.image}

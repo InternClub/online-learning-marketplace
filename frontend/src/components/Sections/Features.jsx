@@ -43,7 +43,7 @@ const Features = () => {
         </div>
 
         {/* Block 2 */}
-        <div className='flex flex-col lg:flex-row justify-center items-center gap-6 px-4 sm:px-[50px]'>
+        <div className='flex flex-col lg:flex-row-reverse justify-center items-center gap-6 px-4 sm:px-[50px]'>
           <div className='flex flex-col gap-5 w-full lg:w-[70%] justify-center items-center lg:items-start px-2'>
             <div className='text-2xl sm:text-4xl font-bold bg-gradient-to-r from-[#075e98] to-[#4bfcff] bg-clip-text text-transparent text-center lg:text-left'>
               Tools For Teachers And Learners
@@ -70,7 +70,7 @@ const Features = () => {
         </div>
 
         {/* Block 4 */}
-        <div className='flex flex-col lg:flex-row justify-center items-center gap-6 px-4 sm:px-[50px]'>
+        <div className='flex flex-col lg:flex-row-reverse justify-center items-center gap-6 px-4 sm:px-[50px]'>
           <div className='flex flex-col gap-5 w-full lg:w-[70%] justify-center items-center lg:items-start px-2'>
             <div className='text-2xl sm:text-4xl font-bold bg-gradient-to-r from-[#075e98] to-[#4bfcff] bg-clip-text text-transparent text-center lg:text-left'>
               Class Management Tools for Educators

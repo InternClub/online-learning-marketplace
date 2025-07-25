@@ -3,7 +3,7 @@ import video from '/Video/teachingVideo.mp4'
 
 const Classroom = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between px-4 py-8 sm:px-8 lg:px-12 max-w-7xl mx-auto bg-[#f8f9fa] rounded-xl">
+    <div className="flex flex-col lg:flex-row items-center justify-between px-4 py-8 sm:px-8 lg:px-12 max-w-7xl mx-auto bg-[#f8f9fa] rounded-xl mt-8">
       
       {/* Text Section */}
       <div className="w-full lg:max-w-xl space-y-5 text-center lg:text-left">
