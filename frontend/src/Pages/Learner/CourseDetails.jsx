@@ -96,15 +96,15 @@ const CourseDetails = () => {
     <div className="bg-white">
       <div className="p-6 bg-white text-gray-800 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">Course Overview</h2>
-          <nav className="space-x-4 text-sm text-gray-600">
-            <a className="hover:text-blue-600 hover:underline" href="#">Overview</a>
-            <a className="hover:text-blue-600 hover:underline" href="#">Curriculum</a>
-            <a className="hover:text-blue-600 hover:underline" href="#">Instructor</a>
-            <a className="hover:text-blue-600 hover:underline" href="#">Reviews</a>
-          </nav>
-        </div>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+  <h2 className="text-xl sm:text-2xl font-bold text-center sm:text-left">Course Overview</h2>
+  <nav className="space-x-2 sm:space-x-4 text-sm text-gray-600 text-center sm:text-right">
+    <a className="hover:text-blue-600 hover:underline" href="#">Overview</a>
+    <a className="hover:text-blue-600 hover:underline" href="#">Curriculum</a>
+    <a className="hover:text-blue-600 hover:underline" href="#">Instructor</a>
+    <a className="hover:text-blue-600 hover:underline" href="#">Reviews</a>
+  </nav>
+</div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
