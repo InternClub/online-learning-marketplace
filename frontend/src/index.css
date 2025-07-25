@@ -4,5 +4,11 @@
     .primary{
         @apply bg-[#1f2833] text-black font-serif
     }
+    /* .light{
+        @apply bg-white text-black font-serif
+    }
+    .dark{
+        @apply bg-[#1f2833] text-white font-serif
+    } */
 }
 
