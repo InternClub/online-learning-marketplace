@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { addToWishlist } from "../../Store/API/wishlistSlice";
+
 
 const CourseCatalog = () => {
   const title = useLocation().state;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState(title || "");
 
   useEffect(() => {
@@ -34,7 +39,7 @@ const CourseCatalog = () => {
       image: "/Images/Group40.png",
     },
     {
-      id: 1,
+      id: 3,
       title: "AWS Certified Solutions Architect",
       description:
         "Master AWS architecture and deploy scalable cloud solutions.",
@@ -46,7 +51,7 @@ const CourseCatalog = () => {
       image: "/Images/Rectangle69.png", // Update with real image path
     },
     {
-      id: 2,
+      id: 4,
       title: "Responsive UI with Tailwind",
       description: "Craft beautiful, adaptive layouts using utility-first CSS.",
       instructor: "Adam Smith",
@@ -57,7 +62,7 @@ const CourseCatalog = () => {
       image: "/Images/Group40.png",
     },
     {
-      id: 1,
+      id: 5,
       title: "AWS Certified Solutions Architect",
       description:
         "Master AWS architecture and deploy scalable cloud solutions.",
@@ -69,7 +74,7 @@ const CourseCatalog = () => {
       image: "/Images/Rectangle69.png", // Update with real image path
     },
     {
-      id: 2,
+      id: 6,
       title: "Responsive UI with Tailwind",
       description: "Craft beautiful, adaptive layouts using utility-first CSS.",
       instructor: "Adam Smith",
@@ -201,9 +206,10 @@ const CourseCatalog = () => {
                 </div>
                 <div className="pt-3">
                   <button
-                    onClick={() =>
-                      console.log(`Added to wishlist: ${course.title}`)
-                    }
+                    onClick={() => {dispatch(addToWishlist(course))
+                      navigate('/learnerwishlist')
+                    }}
+                    
                     className="w-full bg-white text-black py-2 rounded hover:shadow-lg text-sm"
                   >
                     ❤️ Add to Wishlist
