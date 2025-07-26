@@ -2,15 +2,27 @@ import React, { useState } from "react";
 import LoginImg from "/Images/Rectangle 78.png";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../Store/API/authSlice";
 
 const Login = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const toggleTheme = () => setDarkMode(!darkMode);
   const handleResetClick = () => navigate("/resetpassword");
   const handleHome = () => navigate('/profile');
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (username && password) {
+      dispatch(login({ email: username, password }));
+    }
+  };
 
   return (
     <div
@@ -70,6 +82,8 @@ const Login = () => {
               type="email"
               placeholder="Enter your email..."
               className="w-full p-2 rounded border placeholder:text-[#45a29e]"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
@@ -80,13 +94,10 @@ const Login = () => {
               maxLength={16}
               placeholder="Enter your password..."
               className="w-full p-2 rounded border placeholder:text-[#45a29e]"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <span
-              className="text-gray-600 text-lg cursor-pointer"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? "🙈" : "👁️"}
-            </span>
+            
           </div>
         </div>
 
@@ -95,7 +106,7 @@ const Login = () => {
             className={`px-6 py-2 rounded-xl cursor-pointer ${
               darkMode ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"
             }`}
-            onClick={handleHome}
+            onClick={(e) => handleSubmit(e)}
           >
             Login
           </button>
