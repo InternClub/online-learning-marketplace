@@ -22,6 +22,7 @@ import Wishlist from "./Pages/Learner/Wishlist";
 import Progress from "./Pages/Learner/Progress";
 import MyCourses from "./Pages/Learner/MyCourses";
 import DailyGoals from "./Pages/Learner/DailyGoals";
+import Dashboard from "./Pages/Instructor/Dashboard";
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
           <Route path="/learnerProgress" element={<Progress />} />
           <Route path="/myCourses" element={<MyCourses />} />
           <Route path="/dailygoals" element={<DailyGoals />} />
-          
+          <Route path="/instructorprofile" element={<Dashboard />} />
         </Routes>
         <Footer />
       </BrowserRouter>

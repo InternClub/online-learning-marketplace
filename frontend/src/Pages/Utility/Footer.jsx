@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const location = useLocation();
-  const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile"];
+  const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile","/instructorprofile"];
   const isHidden = hiddenPaths.includes(location.pathname);
 
   const navigate = useNavigate();

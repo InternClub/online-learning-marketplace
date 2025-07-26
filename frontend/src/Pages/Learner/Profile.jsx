@@ -86,6 +86,15 @@ const Profile = () => {
         >
           Daily Goals
         </button>
+        <button
+  className="w-full h-[50px] mt-auto rounded-2xl bg-red-500 text-white font-bold hover:bg-red-600"
+  onClick={() => {
+    localStorage.removeItem("username"); // Or any auth key
+    navigate("/login"); // Redirect after logout
+  }}
+>
+  Log Out
+</button>
       </div>
 
 
