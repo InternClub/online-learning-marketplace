@@ -6,9 +6,7 @@ import Login from "./Pages/System-level/Login";
 import PageNotFound from "./Pages/System-level/404";
 import ResetPassword from "./Pages/System-level/ResetPassword";
 import Homepage from "./Pages/Learner/Homepage";
-
 import Footer from "./Pages/Utility/Footer";
-
 import Courses from "./Pages/Learner/Courses";
 import CourseDetails from "./Pages/Learner/CourseDetails";
 import Profile from "./Pages/Learner/Profile";
@@ -26,7 +24,6 @@ import PublishedCourses from "./Pages/Instructor/Published";
 import Dashboard from './Pages/Instructor/Dashboard';
 import EnrolledStudents from "./Pages/Instructor/CourseData";
 import InstructorSchedule from "./Pages/Instructor/Schedule";
-import CourseBuilder from "./Pages/Instructor/CourseBuilder";
 import AdminDashboard from "./Pages/Admin/DashboardAdmin";
 
 
@@ -42,9 +39,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
 
           <Route index path="/" element={<Homepage />} />
-
           <Route path="/search" element={<Search />} />
-
           <Route path="/courses" element={<Courses />} />
           <Route path="/coursedetails" element={<CourseDetails />} />
           <Route path="/coursecatlog" element={<CourseCatalog />} />
@@ -61,13 +56,11 @@ function App() {
           <Route path="/learnerProgress" element={<Progress />} />
           <Route path="/myCourses" element={<MyCourses />} />
           <Route path="/dailygoals" element={<DailyGoals />} />
-          <Route path="instructorprofile" element={<Dashboard />} />
+          <Route path="/instructorprofile" element={<Dashboard />} />
           <Route path="/published" element={<PublishedCourses />} />
           <Route path="/enrolledstudents" element={<EnrolledStudents />} />
           <Route path="/instructorschedule" element={<InstructorSchedule />} />
-          {/* <Route path="/instructorsettings" element={<CourseBuilder/>} /> */}
-
-          {/* //admin Dashboard */}
+          <Route path="/instructorprofile" element={<Dashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
 
         </Routes>
