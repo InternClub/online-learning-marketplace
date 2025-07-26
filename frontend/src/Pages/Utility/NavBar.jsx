@@ -50,12 +50,12 @@ const NavBar = () => {
       <div className="flex flex-wrap gap-2 items-center mr-40 mt-4 sm:mt-0 sm:flex-nowrap">
 
         <button 
-        className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
+        className={`px-4 py-2  bg-[#66b3ff] text-white rounded hover:scale-105 transition-transform  ${isHidden ? 'hidden' : ''}`}
         onClick={handleSearchClick}
 
         
         >
-          🔍 Search
+          Find Course
         </button>
         <button
           className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
