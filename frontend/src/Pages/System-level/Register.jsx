@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import RegisterImg from "/Images/Rectangle 77.png";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
 
   const toggleTheme = () => setDarkMode(!darkMode);
 
@@ -53,8 +55,8 @@ const Register = () => {
         <h3 className="text-2xl font-bold text-center">Welcome to InterClub</h3>
 
         <div className="flex items-center w-full justify-center">
-          <div className="flex justify-center items-center gap-4 my-5 bg-[#66fcf1] rounded-2xl w-[80%] sm:w-[60%]">
-            <Button />
+          <div className="flex justify-center items-center gap-4 my-5 h-12 rounded-2xl w-[80%] sm:w-[60%] font-bold text-xl">
+            Register
           </div>
         </div>
 
@@ -123,14 +125,20 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-center">
+        <div className="mt-6 flex flex-col   items-center justify-center">
           <button
             className={`px-6 py-2 rounded-xl cursor-pointer ${
               darkMode ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"
             }`}
           >
-            Register
+            Submit
           </button>
+          <p onClick={() => navigate('/login')} className="text-center mt-3">
+            Already have an account?{" "}
+            <span className="text-blue-500 cursor-pointer hover:underline ">
+              Login
+            </span>
+          </p>
         </div>
       </div>
     </div>

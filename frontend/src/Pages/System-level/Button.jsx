@@ -39,7 +39,7 @@ const Button = () => {
         <button
           className={`px-4 py-2 rounded-xl ${
             (darkMode ? " text-black" : " text-white",
-            registerClick ? "bg-[#69c1b9]" : " bg-[#66fcf1]")
+            registerClick ? "bg-[#69c1b9] hidden" : " bg-[#66fcf1]")
           }`}
           onClick={() => onRegisterClick()}
         >

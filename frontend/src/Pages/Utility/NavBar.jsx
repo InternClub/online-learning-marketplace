@@ -1,115 +1,152 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSelector,useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../../Store/API/themeSlice";
 
 const NavBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile",];
+  const hiddenPaths = ["/login", "/register", "/resetpassword", "/profile","/instructorprofile"];
   const isHidden = hiddenPaths.includes(location.pathname);
   const mode = useSelector((state) => state.theme.mode);
   const dispatch = useDispatch();
 
   const ToggleTheme = () => {
-    // setDarkMode(!darkMode);
     dispatch(toggleTheme());
-    // console.log("noob");
-
   };
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
   const handleLoggedinToggle = () => {
-    setIsLoggedIn(!isLoggedIn);
+    // setIsLoggedIn(!isLoggedIn);
     navigate("/login");
+    setMenuOpen(false);
   };
 
-  const handleSearchClick = () => navigate("/search");
-  const handleSignupToggle = () => navigate("/register");
-  const handleHomePage = () => navigate("/");
-  const handleCourses = () => navigate("/courses");
-  const handleCoursesDetails = () => navigate("/coursedetails");
-  const handleProfile = () => navigate("/lernerprofile");
-  // const handleLearnerCart = () => navigate("/lernercart");
+  const handleSearchClick = () => {
+    navigate("/search");
+    setMenuOpen(false);
+  };
+  const handleSignupToggle = () => {
+    navigate("/register");
+    setMenuOpen(false);
+  };
+  const handleHomePage = () => {
+    navigate("/");
+    setMenuOpen(false);
+  };
+  const handleCourses = () => {
+    navigate("/courses");
+    setMenuOpen(false);
+  };
+  const handleCoursesDetails = () => {
+    navigate("/coursedetails");
+    setMenuOpen(false);
+  };
+  const handleProfile = () => {
+    navigate("/lernerprofile");
+    setMenuOpen(false);
+  };
 
-  useEffect(()=>{
-    localStorage.setItem("themeMode",mode)
-  },[mode])
+  useEffect(() => {
+    localStorage.setItem("themeMode", mode);
+    const storedUsername = localStorage.getItem("username"); // Adjust key as needed
+    setIsLoggedIn(!!storedUsername);
+  }, [mode]);
 
   return (
-    <nav className="flex flex-wrap items-center justify-between p-4 bg-white shadow-md">
+    <nav className={`sticky top-0 left-0 right-0 z-50 bg-white shadow-md p-4 flex items-center justify-between flex-wrap ${isHidden ? "hidden" : "block"}`}>
       {/* Brand */}
-      <div
-        onClick={handleHomePage}
-        className="text-xl font-bold text-green-500 cursor-pointer"
-      >
-        <img src="/Images/logoIC.png" className="h-10 w-10" />
+      <div className="flex w-[100%]  justify-between items-center">
+
+      <div onClick={handleHomePage} className="cursor-pointer flex items-center">
+        <img src="/Images/logoIC.png" className="h-10 w-10 mr-2" alt="Logo" />
+        {/* <span className="text-xl font-bold text-green-500">IC</span> */}
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex flex-wrap gap-2 items-center mr-40 mt-4 sm:mt-0 sm:flex-nowrap">
-
-        <button 
-        className={`px-4 py-2  bg-[#66b3ff] text-white rounded hover:scale-105 transition-transform  ${isHidden ? 'hidden' : ''}`}
-        onClick={handleSearchClick}
-
-        
-        >
-          Find Course
-        </button>
-        <button
-          className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
-          onClick={handleCourses}
-        >
-          Courses
-        </button>
-        <button
-          className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
-          onClick={handleCoursesDetails}
-        >
-          Course Details
-        </button>
-
-        
-
-        {!isLoggedIn ? (
-          <>
-            <button
-              className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-              onClick={handleSignupToggle}
-            >
-              Sign Up
-            </button>
-            <button
-              className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-              onClick={handleLoggedinToggle}
-            >
-              Log In
-            </button>
-          </>
-        ) : (
-          <>
-
-            <button className={`px-4 py-2  bg-green-400 text-white rounded hover:bg-green-500 ${isHidden ? 'hidden' : ''}`}
-             onClick={handleProfile}
-            >
-              Dashboard
-            </button>
-            <button
-              className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-              onClick={handleLoggedinToggle}
-            >
-              Log Out
-            </button>
-          </>
-        )}
-      </div>
+      {/* Hamburger Toggle (mobile only) */}
       <button
-        onClick={ToggleTheme}
-        className="darkmode absolute top-4 right-4 px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300 ease-in-out"
+        onClick={toggleMenu}
+        className="sm:hidden text-2xl text-gray-600 focus:outline-none"
       >
-        {mode === "dark" ? "🌞" : "🌚"}
+        {menuOpen ? "✖️" : "☰"}
       </button>
+
+      {/* Nav Buttons */}
+      <div
+          className={`${
+    menuOpen ? "block" : "hidden"
+  } w-full sm:flex sm:items-center sm:w-full sm:justify-end mt-4 sm:mt-0`}
+>
+  
+        <div className="flex flex-col sm:flex-row gap-2">
+          {!isHidden && (
+            <>
+              <button
+                className="px-4 py-2  bg-blue-600 text-white rounded hover:scale-105 transition-transform"
+                onClick={handleSearchClick}
+              >
+                Find Course
+              </button>
+              <button
+                className="px-4 py-2  bg-blue-600 text-white rounded hover:bg-green-500"
+                onClick={handleCourses}
+              >
+                Courses
+              </button>
+              <button
+                className="px-4 py-2  bg-blue-600 text-white rounded hover:bg-green-500"
+                onClick={handleCoursesDetails}
+              >
+                Course Details
+              </button>
+            </>
+          )}
+
+          {!isLoggedIn ? (
+            <>
+              <button
+                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                onClick={handleSignupToggle}
+              >
+                Sign Up
+              </button>
+              <button
+                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                onClick={handleLoggedinToggle}
+              >
+                Log In
+              </button>
+            </>
+          ) : (
+            <>
+              {!isHidden && (
+                <button
+                  className="px-4 py-2 bg-green-400 text-white rounded hover:bg-green-500"
+                  onClick={handleProfile}
+                >
+                  Dashboard
+                </button>
+              )}
+              {/* <button
+                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                onClick={handleLoggedinToggle}
+              >
+                Log Out
+              </button> */}
+            </>
+          )}
+      <button
+  onClick={ToggleTheme}
+  className="mt-4 sm:mt-0 sm:ml-auto px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition duration-300 ease-in-out"
+>
+  {mode === "dark" ? "🌞" : "🌚"}
+</button>
+        </div>
+      </div>
+      </div>
+      {/* Theme Toggle */}
     </nav>
   );
 };
