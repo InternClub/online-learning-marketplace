@@ -13,6 +13,8 @@ const Profile = () => {
   const handleLearnerProgress = ()=> navigate('/learnerProgress')
   const handleMyCourses = ()=> navigate('/myCourses')
   const handleDailyGoals = ()=> navigate('/dailygoals')
+  const handleInstructor = ()=> navigate('/instructorprofile')
+  const handleAdmin = ()=> navigate('/admin')
 
 
   const certificates = [
@@ -85,6 +87,16 @@ const Profile = () => {
         onClick={handleDailyGoals}
         >
           Daily Goals
+        </button>
+        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+        onClick={handleInstructor}
+        >
+          Instructor
+        </button>
+        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+        onClick={handleAdmin}
+        >
+          Admin
         </button>
         <button
   className="w-full h-[50px] mt-auto rounded-2xl bg-red-500 text-white font-bold hover:bg-red-600"

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import AddCourseModal from "../../Components/Modal/AddCourse";
 import CourseBuilder from "../../components/Modal/CourseBuilder";
+
 
 export default function PublishedCourses() {
   const [isModalOpen, setIsModalOpen] = useState(false);
