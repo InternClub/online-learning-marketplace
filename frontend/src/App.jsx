@@ -22,7 +22,11 @@ import Wishlist from "./Pages/Learner/Wishlist";
 import Progress from "./Pages/Learner/Progress";
 import MyCourses from "./Pages/Learner/MyCourses";
 import DailyGoals from "./Pages/Learner/DailyGoals";
-import Dashboard from "./Pages/Instructor/Dashboard";
+import PublishedCourses from "./Pages/Instructor/Published";
+import Dashboard from './Pages/Instructor/Dashboard';
+import EnrolledStudents from "./Pages/Instructor/CourseData";
+import InstructorSchedule from "./Pages/Instructor/Schedule";
+import CourseBuilder from "./Pages/Instructor/CourseBuilder";
 
 
 function App() {
@@ -56,7 +60,12 @@ function App() {
           <Route path="/learnerProgress" element={<Progress />} />
           <Route path="/myCourses" element={<MyCourses />} />
           <Route path="/dailygoals" element={<DailyGoals />} />
-          <Route path="/instructorprofile" element={<Dashboard />} />
+          <Route path="instructorprofile" element={<Dashboard />} />
+          <Route path="/published" element={<PublishedCourses />} />
+          <Route path="/enrolledstudents" element={<EnrolledStudents />} />
+          <Route path="/instructorschedule" element={<InstructorSchedule />} />
+          {/* <Route path="/instructorsettings" element={<CourseBuilder/>} /> */}
+          
         </Routes>
         <Footer />
       </BrowserRouter>
