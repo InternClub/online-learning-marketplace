@@ -27,6 +27,7 @@ import Dashboard from './Pages/Instructor/Dashboard';
 import EnrolledStudents from "./Pages/Instructor/CourseData";
 import InstructorSchedule from "./Pages/Instructor/Schedule";
 import CourseBuilder from "./Pages/Instructor/CourseBuilder";
+import AdminDashboard from "./Pages/Admin/DashboardAdmin";
 
 
 function App() {
@@ -65,7 +66,10 @@ function App() {
           <Route path="/enrolledstudents" element={<EnrolledStudents />} />
           <Route path="/instructorschedule" element={<InstructorSchedule />} />
           {/* <Route path="/instructorsettings" element={<CourseBuilder/>} /> */}
-          
+
+          {/* //admin Dashboard */}
+          <Route path="/admin" element={<AdminDashboard />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>

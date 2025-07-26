@@ -1,7 +1,8 @@
 import React from "react";
-import InstructorsPanel from "./InstructorsPanel";
-import LearnersPanel from "./LearnersPanel";
 import MetricsPanel from "./Panel/MetricsPanel";
+import InstructorPanel from "./Panel/InstructorPanel";
+import LearnerPanel from "./Panel/LearnerPanel";
+
 
 const AdminDashboard = () => {
   return (
@@ -10,11 +11,11 @@ const AdminDashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <MetricsPanel />
-        <InstructorsPanel />
+        <InstructorPanel />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <LearnersPanel />
+        <LearnerPanel />
         {/* Optional: CategoryManager or AlertsPanel */}
       </div>
     </div>
