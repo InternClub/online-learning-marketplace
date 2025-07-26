@@ -21,18 +21,18 @@ import Progress from "./Pages/Learner/Progress";
 import MyCourses from "./Pages/Learner/MyCourses";
 import DailyGoals from "./Pages/Learner/DailyGoals";
 import PublishedCourses from "./Pages/Instructor/Published";
-import Dashboard from './Pages/Instructor/Dashboard';
+import Dashboard from "./Pages/Instructor/Dashboard";
 import EnrolledStudents from "./Pages/Instructor/CourseData";
 import InstructorSchedule from "./Pages/Instructor/Schedule";
 import AdminDashboard from "./Pages/Admin/DashboardAdmin";
 
-
 function App() {
   const initialTheme = localStorage.getItem("themeMode") || "light";
-  
 
   return (
-    <div className={`primary ${initialTheme === "dark" ? "bg-black" : "light"}`}>
+    <div
+      className={`primary ${initialTheme === "dark" ? "bg-black" : "light"}`}
+    >
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -62,7 +62,6 @@ function App() {
           <Route path="/instructorschedule" element={<InstructorSchedule />} />
           <Route path="/instructorprofile" element={<Dashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
-
         </Routes>
         <Footer />
       </BrowserRouter>

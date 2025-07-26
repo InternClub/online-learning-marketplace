@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-// import AddCourseModal from "../../Components/Modal/AddCourse";
-import CourseBuilder from "../../Components/Modal/CourseBuilder";
+import CourseBuilder from "../../components/Modal/CourseBuilder";
+
 
 export default function PublishedCourses() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-//   const handleOpen = () => setIsModalOpen(true);
+  //   const handleOpen = () => setIsModalOpen(true);
   const handleClose = () => setIsModalOpen(false);
 
   const [courses, setCourses] = useState([
@@ -37,7 +37,6 @@ export default function PublishedCourses() {
 
       {/* Add Course Section */}
       <div className="flex flex-col md:flex-row items-center gap-4 mb-8">
-        
         {/* <button
           onClick={handleOpen}
           className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-green-500"
