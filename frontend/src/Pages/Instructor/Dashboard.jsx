@@ -9,18 +9,20 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [showMessages, setShowMessages] = useState(false);
 
-  const handlePublishedCourses = () => navigate("/instructor/publishedcourses");
-  const handleEnrolledStats = () => navigate("/instructor/enrollmentstats");
+  const handlePublishedCourses = () => navigate("/published");
+  const handleEnrolledStats = () => navigate("/enrolledstudents");
   const handleAnalytics = () => navigate("/instructor/analytics");
   const handleMessages = () => navigate("/instructor/messages");
-  const handleInstructorSchedule = () => navigate("/instructor/schedule");
-  const handleInstructorSettings = () => navigate("/instructor/settings");
+  const handleInstructorSchedule = () => navigate("/instructorschedule");
+  const handleInstructorSettings = () => navigate("/instructorsettings");
 
   return (
     <div className="flex flex-col lg:flex-row w-full min-h-[100vh] bg-[#0a4c91] p-2 overflow-x-hidden">
       {/* Sidebar */}
       <div className="flex flex-col w-full lg:w-[25%] bg-white rounded-2xl py-10 px-4 gap-5 mb-5 lg:mb-0">
-        <button onClick={handlePublishedCourses} className="w-full h-[50px] rounded-2xl bg-[#7AB8F5] text-white font-bold hover:shadow-xl">
+        <button onClick={handlePublishedCourses} className="w-full h-[50px] rounded-2xl bg-[#7AB8F5] text-white font-bold hover:shadow-xl"
+        
+        >
           Published Courses
         </button>
         <button onClick={handleEnrolledStats} className="w-full h-[50px] rounded-2xl bg-[#7AB8F5] text-white font-bold hover:shadow-xl">
