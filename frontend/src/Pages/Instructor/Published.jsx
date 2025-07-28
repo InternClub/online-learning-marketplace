@@ -30,7 +30,7 @@ export default function PublishedCourses() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-2xl">
       <h1 className="text-3xl font-bold text-green-600 mb-6">
         Published Courses
       </h1>
