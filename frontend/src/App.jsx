@@ -57,9 +57,9 @@ function App() {
           <Route path="/myCourses" element={<MyCourses />} />
           <Route path="/dailygoals" element={<DailyGoals />} />
           <Route path="/instructorprofile" element={<Dashboard />} />
-          <Route path="/published" element={<PublishedCourses />} />
-          <Route path="/enrolledstudents" element={<EnrolledStudents />} />
-          <Route path="/instructorschedule" element={<InstructorSchedule />} />
+          {/* <Route path="/published" element={<PublishedCourses />} /> */}
+          {/* <Route path="/enrolledstudents" element={<EnrolledStudents />} /> */}
+          {/* <Route path="/instructorschedule" element={<InstructorSchedule />} /> */}
           <Route path="/instructorprofile" element={<Dashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
