@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="flex flex-col lg:flex-row w-full h-[90vh] min-h-[80vh] justify-center items-center shadow-lg rounded-b-[5rem] sm:rounded-b-[10rem] lg:rounded-b-[15rem] px-4 sm:px-6 lg:px-12 bg-[#49BBBD] overflow-hidden pt-18 ">
       
       {/* Left Section */}
-      <div className="flex w-full lg:w-1/2 h-auto py-12 lg:py-0">
+      <div className="flex w-full lg:w-1/2 h-auto py-12 mt-10 lg:mt-0 lg:py-0">
         <div className="flex flex-col w-full justify-center items-start gap-5">
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-snug">
             Welcome to <span className="text-[#F9C74F]">InternClub</span>
@@ -34,9 +34,9 @@ const Hero = () => {
         </div>
 
         {/* Floating Cards */}
-        <div className="absolute top-16 left-2 sm:left-8 w-[220px] sm:w-[250px] h-[100px] bg-white/30 backdrop-blur-md shadow-md rounded-xl flex items-center gap-4 px-4">
+        <div className="absolute top-16 left-2 sm:left-8 w-[220px] sm:w-[250px] h-[100px] bg-white/30 backdrop-blur-md shadow-md rounded-xl  items-center gap-4 px-4 hidden sm:flex">
           <img src={calender} alt="Calender" className="w-10 h-10 object-contain" />
-          <div>
+          <div className="">
             <p className="text-base font-semibold">200K</p>
             <p className="text-xs sm:text-sm">Students Assisted</p>
           </div>
@@ -54,7 +54,7 @@ const Hero = () => {
           <img src={group9} alt="Stats" className="w-20 h-20 object-contain" />
         </div>
 
-        <div className="absolute bottom-50 sm:right-28 w-[260px] sm:w-[300px] h-[110px] bg-white/30 backdrop-blur-md shadow-md rounded-xl flex items-center gap-3 px-4">
+        <div className="absolute bottom-65 sm:bottom-50 md:top-90 md:left-40 sm:right-28 w-[260px] sm:w-[300px] h-[110px] bg-white/30 backdrop-blur-md shadow-md rounded-xl flex items-center gap-3 px-4">
           <img src={email} alt="Webinar" className="w-10 h-10 object-contain bg-orange-500 p-1 rounded-sm" />
           <div className="flex flex-col gap-1">
             <p className="text-base font-semibold">Expert's Webinar</p>

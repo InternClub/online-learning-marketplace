@@ -1,32 +1,35 @@
+//   const handleAddCourse = () => {
+//     if (newCourse.trim() === '') return;
+//     const newId = Date.now();
+//     setCourses([...courses, { id: newId, title: newCourse, students: 0 }]);
+//     setNewCourse('');
+//   };
 import React, { useState } from "react";
 import CourseBuilder from "../../components/Modal/CourseBuilder";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { addCourse, removeCourse } from "../../Store/API/courseSlice";
 export default function PublishedCourses() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const dispatch = useDispatch();
+  const courses = useSelector((state) => state.course);
   //   const handleOpen = () => setIsModalOpen(true);
   const handleClose = () => setIsModalOpen(false);
 
-  const [courses, setCourses] = useState([
-    { id: 1, title: "React Basics", students: 120 },
-    { id: 2, title: "Tailwind CSS Mastery", students: 85 },
-  ]);
-  const [newCourse, setNewCourse] = useState("");
+  // const [courses, setCourses] = useState([
+  //   { id: 1, title: "React Basics", students: 120 },
+  //   { id: 2, title: "Tailwind CSS Mastery", students: 85 },
+  // ]);
+  // const [newCourse, setNewCourse] = useState("");
 
-  //   const handleAddCourse = () => {
-  //     if (newCourse.trim() === '') return;
-  //     const newId = Date.now();
-  //     setCourses([...courses, { id: newId, title: newCourse, students: 0 }]);
-  //     setNewCourse('');
-  //   };
   const handleAddCourse = (courseData) => {
     // You can connect this to Redux or send it to your backend here
     console.log("New Course:", courseData);
   };
 
   const handleRemoveCourse = (id) => {
-    setCourses(courses.filter((course) => course.id !== id));
+    // setCourses(courses.filter((course) => course.id !== id));
+    dispatch(removeCourse(id));
+    console.log(`Course with ID ${id} removed`);
   };
 
   return (
@@ -56,14 +59,25 @@ export default function PublishedCourses() {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-xl transition"
+            className="bg-white rounded-lg shadow-md p-4 flex h-[15rem] flex-col justify-between hover:shadow-xl transition"
           >
             <div>
+              { course.image && (
+                <img src={course.image} alt={course.title} className="mt-2 rounded-md" />
+              )}
               <h2 className="text-xl font-semibold text-Black">
                 {course.title}
               </h2>
               <p className="text-gray-600 mt-1">
+                Category: {course.category}
+              </p>
+              <p className="text-gray-600 mt-1">
+                Price: {course.price ? `$${course.price}` : "Free"}
+                &nbsp;|&nbsp;
                 Enrolled Students: {course.students}
+              </p>
+              <p className="text-gray-500 text-sm mt-2">
+                {course.description || "No description available."}
               </p>
             </div>
             <button
