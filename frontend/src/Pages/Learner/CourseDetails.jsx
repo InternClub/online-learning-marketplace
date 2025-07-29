@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../Utility/Footer";
 import Classroom from "../../components/Classroom/Classroom";
+import {useLocation} from "react-router-dom";
 
 const courses = [
   {
@@ -13,7 +14,7 @@ const courses = [
     price: "$80",
     originalPrice: "$100",
     image: "/Images/Group40.png", // Replace with actual image path
-    instructorImg:
+    CourseImg:
       "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
   },
   {
@@ -26,7 +27,7 @@ const courses = [
     price: "$80",
     originalPrice: "$100",
     image: "/Images/Group40.png", // Replace with actual image path
-    instructorImg:
+    CourseImg:
       "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
   },
   {
@@ -39,7 +40,7 @@ const courses = [
     price: "$80",
     originalPrice: "$100",
     image: "/Images/Group40.png", // Replace with actual image path
-    instructorImg:
+    CourseImg:
       "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
   },
   {
@@ -52,7 +53,7 @@ const courses = [
     price: "$80",
     originalPrice: "$100",
     image: "/Images/Group40.png",
-    instructorImg:
+    CourseImg:
       "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
   },
 ];
@@ -111,7 +112,7 @@ const CourseDetails = () => {
           {/* Left: Course Image */}
           <div className="lg:col-span-2">
             <img
-              src="/Images/Rectangle69.png"
+              src={"/Images/Rectangle69.png"}
               alt="Course Preview"
               className="w-full h-130  object-cover rounded-xl"
             />
@@ -218,7 +219,7 @@ const CourseDetails = () => {
                 <div className="flex justify-between items-center mt-4">
                   <div className="flex items-center gap-2">
                     <img
-                      src={course.instructorImg}
+                      src={course.CourseImg}
                       alt={course.instructor}
                       className="w-6 h-6 rounded-full"
                     />

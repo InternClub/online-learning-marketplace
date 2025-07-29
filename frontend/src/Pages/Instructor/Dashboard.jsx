@@ -38,8 +38,10 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex flex-col w-full lg:w-[75%] h-full px-4">
         {selectedView === "instructorprofile" && (
+
           <div className="flex flex-col items-center gap-5 text-black bg-white min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6">
             <p className="text-3xl sm:text-4xl font-bold ">Instructor Profile</p>
+
 
             <div className="flex flex-col md:flex-row w-full h-full gap-8 md:gap-20">
               <div className="flex w-full md:w-[60%] flex-col justify-start items-start gap-2 ">
