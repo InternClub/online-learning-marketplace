@@ -29,6 +29,48 @@ const courses = [
     image: "/Images/Group40.png", 
     instructorImg:
       "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
+    reviews: [
+      {
+        reviewer: "John Doe",
+        rating: 4,
+        comment: "Great course, very informative!"
+      },
+      {
+        reviewer: "Jane Smith",
+        rating: 5,
+        comment: "Loved it! Highly recommend."
+      },
+      {
+        reviewer: "Jane Smith",
+        rating: 2,
+        comment: "talks too much, not enough examples."
+      }
+    ]
+  },
+  {
+    title: "AWS Certified Solutions Architect",
+    category: "Design",
+    duration: "3 Month",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    instructor: "Lina",
+    price: "$80",
+    originalPrice: "$100",
+    image: "/Images/Group40.png", 
+    instructorImg:
+      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png",
+    reviews: [
+      {
+        reviewer: "Alice Johnson",
+        rating: 5,
+        comment: "Excellent content and delivery!"
+      },
+      {
+        reviewer: "Bob Brown",
+        rating: 3,
+        comment: "Good course, but could use more examples."
+      }
+    ]
   },
   {
     title: "AWS Certified Solutions Architect",
@@ -42,6 +84,18 @@ const courses = [
     image: "/Images/Group40.png", 
     instructorImg:
       "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
+    reviews: [
+      {
+        reviewer: "Charlie Green",
+        rating: 4,
+        comment: "Very useful course, learned a lot!"
+      },
+      {
+        reviewer: "Diana White",
+        rating: 5,
+        comment: "Fantastic! Will take more courses from this instructor."
+      }
+    ]
   },
   {
     title: "AWS Certified Solutions Architect",
@@ -54,20 +108,19 @@ const courses = [
     originalPrice: "$100",
     image: "/Images/Group40.png", 
     instructorImg:
-      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
-  },
-  {
-    title: "AWS Certified Solutions Architect",
-    category: "Design",
-    duration: "3 Month",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    instructor: "Lina",
-    price: "$80",
-    originalPrice: "$100",
-    image: "/Images/Group40.png", 
-    instructorImg:
-      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
+      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png",
+    reviews: [
+      {
+        reviewer: "Eve Black",
+        rating: 4,
+        comment: "Great course, very informative!"
+      },
+      {
+        reviewer: "Frank Blue",
+        rating: 5,
+        comment: "Loved it! Highly recommend."
+      }
+    ]
   },
 ];
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Utility/Footer";
 import Classroom from "../../components/Classroom/Classroom";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const courses = [
   {
@@ -62,57 +62,62 @@ const offers = [
   {
     title: "FOR INSTRUCTORS",
     discount: "50%",
-    description:"InterClub's school management software helps traditional and online schools manage scheduling.",
+    description:
+      "InterClub's school management software helps traditional and online schools manage scheduling.",
 
-    
     image: "/Images/Rectangle19.png",
-
-    
-
-  },
-  {
-    title: "FOR INSTRUCTORS",
-    discount: "50%",
-    description:"InterClub's school management software helps traditional and online schools manage scheduling.",
-    image: "/Images/Rectangle19.png",
-
-    
-  
-
   },
   {
     title: "FOR INSTRUCTORS",
     discount: "50%",
     description:
-
-    "InterClub's school management software helps traditional and online schools manage scheduling.",
+      "InterClub's school management software helps traditional and online schools manage scheduling.",
     image: "/Images/Rectangle19.png",
-
+  },
+  {
+    title: "FOR INSTRUCTORS",
+    discount: "50%",
+    description:
+      "InterClub's school management software helps traditional and online schools manage scheduling.",
+    image: "/Images/Rectangle19.png",
   },
 ];
 
 const CourseDetails = () => {
-  
+  const location = useLocation();
+  const course = location.state;
+
   return (
     <div className="bg-white">
       <div className="p-6 bg-white text-gray-800 max-w-7xl mx-auto">
         {/* Header */}
+        
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
-  <h2 className="text-xl sm:text-2xl font-bold text-center sm:text-left">Course Overview</h2>
-  <nav className="space-x-2 sm:space-x-4 text-sm text-gray-600 text-center sm:text-right">
-    <a className="hover:text-blue-600 hover:underline" href="#">Overview</a>
-    <a className="hover:text-blue-600 hover:underline" href="#">Curriculum</a>
-    <a className="hover:text-blue-600 hover:underline" href="#">Instructor</a>
-    <a className="hover:text-blue-600 hover:underline" href="#">Reviews</a>
-  </nav>
-</div>
+          <h2 className="text-xl sm:text-2xl font-bold text-center sm:text-left">
+            Course Overview
+          </h2>
+          <nav className="space-x-2 sm:space-x-4 text-sm text-gray-600 text-center sm:text-right">
+            <a className="hover:text-blue-600 hover:underline" href="#">
+              Overview
+            </a>
+            <a className="hover:text-blue-600 hover:underline" href="#">
+              Curriculum
+            </a>
+            <a className="hover:text-blue-600 hover:underline" href="#">
+              Instructor
+            </a>
+            <a className="hover:text-blue-600 hover:underline" href="#">
+              Reviews
+            </a>
+          </nav>
+        </div>
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left: Course Image */}
           <div className="lg:col-span-2">
             <img
-              src={"/Images/Rectangle69.png"}
+              src={course.image || "/Images/Rectangle69.png"}
               alt="Course Preview"
               className="w-full h-130  object-cover rounded-xl"
             />
@@ -158,26 +163,80 @@ const CourseDetails = () => {
             </div>
           </div>
         </div>
-
+        {/* Course Title */}
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold">
+            {course.title ? course.title : "Untitled Course"}
+          </h2>
+        </div>
+        {/* Course Description */}
+        <div className="mt-4 text-gray-700">
+          {course.description
+            ? course.description
+            : "No description available."}
+        </div>
         {/* Reviews */}
         <div className="mt-10">
           <h3 className="text-xl font-bold mb-4">Reviews</h3>
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-yellow-400 text-xl">★★★★☆</span>
-            <span className="text-sm text-gray-600">4 out of 5</span>
-          </div>
 
-          <div className="space-y-4">
-            {[1, 2].map((i) => (
-              <div key={i} className="border-b pb-4">
-                <p className="font-semibold">Lina</p>
-                <p className="text-sm text-gray-600">
-                  Class, launched less than a year ago by Blackboard co-founder
-                  Michael Chasen, integrates exclusively...
-                </p>
+          {/* Average Rating Display */}
+          {course?.reviews && course.reviews.length > 0 ? (
+            <>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-yellow-400 text-xl">
+                  {(() => {
+                    const avgRating =
+                      course.reviews.reduce(
+                        (sum, review) => sum + (review.rating || 0),
+                        0
+                      ) / course.reviews.length;
+                    return (
+                      "★".repeat(Math.floor(avgRating)) +
+                      "☆".repeat(5 - Math.floor(avgRating))
+                    );
+                  })()}
+                </span>
+                <span className="text-sm text-gray-600">
+                  {(
+                    course.reviews.reduce(
+                      (sum, review) => sum + (review.rating || 0),
+                      0
+                    ) / course.reviews.length
+                  ).toFixed(1)}{" "}
+                  out of 5 ({course.reviews.length} review
+                  {course.reviews.length !== 1 ? "s" : ""})
+                </span>
               </div>
-            ))}
-          </div>
+
+              {/* Individual Reviews */}
+              <div className="space-y-4">
+                {course.reviews.map((review, index) => (
+                  <div key={index} className="border-b pb-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div>
+                        <p className="font-semibold">
+                          {review.reviewer || "Anonymous"}
+                        </p>
+                        <div className="flex items-center gap-1">
+                          <span className="text-yellow-400 text-sm">
+                            {"★".repeat(review.rating || 0)}
+                            {"☆".repeat(5 - (review.rating || 0))}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      {review.comment || "No comment provided."}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="text-gray-500 text-center py-8">
+              <p>No reviews yet. Be the first to review this course!</p>
+            </div>
+          )}
         </div>
       </div>
 
@@ -250,53 +309,50 @@ const CourseDetails = () => {
         </div>
       </div>
 
-
       <Classroom />
 
+      {/* Offer Cards */}
+      <div className="px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto  p-10 bg-white text-gray-800">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold">
+            Top Education offers and deals are listed here
+          </h2>
+          <a href="#" className="text-blue-600 hover:underline text-sm">
+            See all
+          </a>
+        </div>
 
         {/* Offer Cards */}
-        <div className="px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto  p-10 bg-white text-gray-800">
-          {/* Header */}
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">
-              Top Education offers and deals are listed here
-            </h2>
-            <a href="#" className="text-blue-600 hover:underline text-sm">
-              See all
-            </a>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {offers.map((offer, index) => (
+            <div
+              key={index}
+              className="relative bg-gray-100 rounded-xl shadow hover:shadow-md transition text-white overflow-hidden h-[200px] flex flex-col justify-between"
+              style={{
+                backgroundImage: `url(${offer.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-          {/* Offer Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {offers.map((offer, index) => (
-              <div
-                key={index}
-                className="relative bg-gray-100 rounded-xl shadow hover:shadow-md transition text-white overflow-hidden h-[200px] flex flex-col justify-between"
-                style={{
-                  backgroundImage: `url(${offer.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 z-0"></div>
-
-                <div className="relative z-10 p-6 flex flex-col justify-between h-full">
-                  <div className="text-right">
-                    <span className="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      {offer.discount} OFF
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold">{offer.title}</h3>
-                    <p className="text-sm">{offer.description}</p>
-                  </div>
+              <div className="relative z-10 p-6 flex flex-col justify-between h-full">
+                <div className="text-right">
+                  <span className="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    {offer.discount} OFF
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold">{offer.title}</h3>
+                  <p className="text-sm">{offer.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-    
+      </div>
     </div>
   );
 };
