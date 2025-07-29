@@ -6,9 +6,10 @@ import CourseData from './CourseData'
 import PublishedCourses from "./Published";
 import Analytics from "./Analytics";
 import InstructorSchedule from "./Schedule";
+import InstructorSettings from "./Setting";
 
 const Dashboard = () => {
-  const [selectedView, setSelectedView] = useState("profile");
+  const [selectedView, setSelectedView] = useState("instructorprofile");
   const [showModal, setShowModal] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
 
@@ -36,12 +37,12 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <div className="flex flex-col w-full lg:w-[75%] h-full px-4">
-        {selectedView === "profile" && (
-          <div className="flex flex-col items-center gap-5">
-            <p className="text-3xl sm:text-4xl font-bold text-[#d1d7fc]">Instructor Profile</p>
+        {selectedView === "instructorprofile" && (
+          <div className="flex flex-col items-center gap-5 text-black bg-white min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6">
+            <p className="text-3xl sm:text-4xl font-bold ">Instructor Profile</p>
 
             <div className="flex flex-col md:flex-row w-full h-full gap-8 md:gap-20">
-              <div className="flex w-full md:w-[60%] flex-col justify-start items-start gap-2 text-[#d1d7fc]">
+              <div className="flex w-full md:w-[60%] flex-col justify-start items-start gap-2 ">
                 <p className="text-lg">Name: Jane Smith</p>
                 <p className="text-lg">Email: jane.smith@example.com</p>
                 <p className="text-lg">Phone: (987) 654-3210</p>
@@ -57,6 +58,9 @@ const Dashboard = () => {
             </div>
           </div>
         )}
+        {/* {selectedView === "published" && (
+          <div className="rounded-3xl">< /> </div>
+        )} */}
 
         {selectedView === "published" && (
           <div className="rounded-3xl"><PublishedCourses /> </div>
@@ -71,7 +75,7 @@ const Dashboard = () => {
           <div className=""><InstructorSchedule /></div>
         )}
         {selectedView === "settings" && (
-          <div className="text-white text-2xl">⚙️ Settings Page</div>
+          <div className="text-white text-2xl"><InstructorSettings /></div>
         )}
 
         {/* Floating Chat Icon */}
