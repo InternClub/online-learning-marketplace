@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import image8 from "/Images/image8.png";
 import EditProfileModal from "../../Components/Modal/EditProfileModal";
 import MessagesModal from "../../components/Modal/MessagesModal";
-import CourseData from './CourseData'
+import CourseData from "./CourseData";
 import PublishedCourses from "./Published";
 import Analytics from "./Analytics";
 import InstructorSchedule from "./Schedule";
 import InstructorSettings from "./Setting";
+import InstructorEarning from "./Earning";
 
 const Dashboard = () => {
   const [selectedView, setSelectedView] = useState("instructorprofile");
@@ -15,15 +16,50 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col lg:flex-row w-full min-h-[100vh] bg-[#0a4c91] p-2 overflow-x-hidden">
-      
       {/* Sidebar */}
       <div className="flex flex-col w-full lg:w-[25%] bg-white rounded-2xl py-10 px-4 gap-5 mb-5 lg:mb-0">
-        <button onClick={() => setSelectedView("instructorprofile")} className="btn-sidebar">My Profile</button>
-        <button onClick={() => setSelectedView("published")} className="btn-sidebar">Published Courses</button>
-        <button onClick={() => setSelectedView("enrolled")} className="btn-sidebar">Enrolled Students</button>
-        <button onClick={() => setSelectedView("analytics")} className="btn-sidebar">Analytics</button>
-        <button onClick={() => setSelectedView("schedule")} className="btn-sidebar">Schedule</button>
-        <button onClick={() => setSelectedView("settings")} className="btn-sidebar">Settings</button>
+        <button
+          onClick={() => setSelectedView("instructorprofile")}
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+        >
+          My Profile
+        </button>
+        <button
+          onClick={() => setSelectedView("published")}
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+        >
+          Published Courses
+        </button>
+        <button
+          onClick={() => setSelectedView("enrolled")}
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+        >
+          Enrolled Students
+        </button>
+        <button
+          onClick={() => setSelectedView("analytics")}
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm "
+        >
+          Analytics
+        </button>
+        <button
+          onClick={() => setSelectedView("schedule")}
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+        >
+          Schedule
+        </button>
+        <button
+          onClick={() => setSelectedView("earning")}
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+        >
+          Earning
+        </button>
+        <button
+          onClick={() => setSelectedView("settings")}
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+        >
+          Settings
+        </button>
         <button
           className="w-full h-[50px] mt-auto rounded-2xl bg-red-500 text-white font-bold hover:bg-red-600"
           onClick={() => {
@@ -38,10 +74,10 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="flex flex-col w-full lg:w-[75%] h-full px-4">
         {selectedView === "instructorprofile" && (
-
           <div className="flex flex-col items-center gap-5 text-black bg-white min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6">
-            <p className="text-3xl sm:text-4xl font-bold ">Instructor Profile</p>
-
+            <p className="text-3xl sm:text-4xl font-bold ">
+              Instructor Profile
+            </p>
 
             <div className="flex flex-col md:flex-row w-full h-full gap-8 md:gap-20">
               <div className="flex w-full md:w-[60%] flex-col justify-start items-start gap-2 ">
@@ -49,13 +85,27 @@ const Dashboard = () => {
                 <p className="text-lg">Email: jane.smith@example.com</p>
                 <p className="text-lg">Phone: (987) 654-3210</p>
                 <p className="text-lg">Specialization: Web Development</p>
-                <p className="text-lg">Bio: I love helping learners grow through meaningful content.</p>
-                <button onClick={() => setShowModal(true)} className="bg-teal-600 text-white px-4 py-2 rounded">Edit Profile</button>
-                <EditProfileModal isOpen={showModal} onClose={() => setShowModal(false)} />
+                <p className="text-lg">
+                  Bio: I love helping learners grow through meaningful content.
+                </p>
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="bg-teal-600 text-white px-4 py-2 rounded"
+                >
+                  Edit Profile
+                </button>
+                <EditProfileModal
+                  isOpen={showModal}
+                  onClose={() => setShowModal(false)}
+                />
               </div>
 
               <div className="flex w-full md:w-[40%] justify-center md:justify-end items-center">
-                <img src={image8} alt="Instructor" className="w-[180px] sm:w-[220px] h-[180px] sm:h-[220px] rounded-full object-cover" />
+                <img
+                  src={image8}
+                  alt="Instructor"
+                  className="w-[180px] sm:w-[220px] h-[180px] sm:h-[220px] rounded-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -65,19 +115,34 @@ const Dashboard = () => {
         )} */}
 
         {selectedView === "published" && (
-          <div className="rounded-3xl"><PublishedCourses /> </div>
+          <div className="rounded-3xl">
+            <PublishedCourses />{" "}
+          </div>
         )}
         {selectedView === "enrolled" && (
-          <div className="rounded"><CourseData /></div>
+          <div className="rounded">
+            <CourseData />
+          </div>
         )}
         {selectedView === "analytics" && (
-          <div className=""><Analytics /></div>
+          <div className="">
+            <Analytics />
+          </div>
         )}
         {selectedView === "schedule" && (
-          <div className=""><InstructorSchedule /></div>
+          <div className="">
+            <InstructorSchedule />
+          </div>
+        )}
+        {selectedView === "earning" && (
+          <div className="">
+            <InstructorEarning />
+          </div>
         )}
         {selectedView === "settings" && (
-          <div className="text-white text-2xl"><InstructorSettings /></div>
+          <div className="text-white text-2xl">
+            <InstructorSettings />
+          </div>
         )}
 
         {/* Floating Chat Icon */}
@@ -89,7 +154,10 @@ const Dashboard = () => {
           >
             💬
           </button>
-          <MessagesModal isOpen={showMessages} onClose={() => setShowMessages(false)} />
+          <MessagesModal
+            isOpen={showMessages}
+            onClose={() => setShowMessages(false)}
+          />
         </div>
       </div>
     </div>

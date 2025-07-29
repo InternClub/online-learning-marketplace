@@ -3,19 +3,17 @@ import image8 from "/Images/image8.png";
 import { useNavigate } from "react-router-dom";
 import EditProfileModal from "../../Components/Modal/EditProfileModal";
 
-
 const Profile = () => {
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const handleLearnerCart = () => navigate("/lernercart");
-  const handleClassSchedule =()=> navigate('/classSchedule')
-  const handleWishlist=()=> navigate('/learnerwishlist')
-  const handleLearnerProgress = ()=> navigate('/learnerProgress')
-  const handleMyCourses = ()=> navigate('/myCourses')
-  const handleDailyGoals = ()=> navigate('/dailygoals')
-  const handleInstructor = ()=> navigate('/instructorprofile')
-  const handleAdmin = ()=> navigate('/admin')
-
+  const handleClassSchedule = () => navigate("/classSchedule");
+  const handleWishlist = () => navigate("/learnerwishlist");
+  const handleLearnerProgress = () => navigate("/learnerProgress");
+  const handleMyCourses = () => navigate("/myCourses");
+  const handleDailyGoals = () => navigate("/dailygoals");
+  const handleInstructor = () => navigate("/instructorprofile");
+  const handleAdmin = () => navigate("/admin");
 
   const certificates = [
     {
@@ -54,80 +52,99 @@ const Profile = () => {
     <div className="flex flex-col lg:flex-row w-full min-h-[100vh] bg-[#0756a9] p-2 overflow-x-hidden">
       {/* Sidebar */}
       <div className="flex flex-col w-full lg:w-[25%] bg-[#ffffff] rounded-2xl py-10 px-4 gap-5 mb-5 lg:mb-0">
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
-        onClick={handleMyCourses}
+        <button
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+          onClick={handleMyCourses}
         >
           My Courses
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
-        onClick={handleWishlist}
+        <button
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+          onClick={handleWishlist}
         >
           Wishlist
         </button>
         <button
-          className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
           onClick={handleLearnerCart}
         >
           Cart
         </button>
 
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
-        onClick={handleClassSchedule}
+        <button
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+          onClick={handleClassSchedule}
         >
-
           Schedule
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
-        onClick={handleLearnerProgress}
+        <button
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+          onClick={handleLearnerProgress}
         >
-
           Progress
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
-        onClick={handleDailyGoals}
+        <button
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+          onClick={handleDailyGoals}
         >
           Daily Goals
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
-        onClick={handleInstructor}
+        <button
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+          onClick={handleInstructor}
         >
           Instructor
         </button>
-        <button className="w-full h-[50px] rounded-2xl bg-[#9DCCFF] text-white font-bold hover:shadow-xl"
-        onClick={handleAdmin}
+        <button
+          className="btn-sidebar flex item-center justify-center w-full py-3 px-4 text-left rounded-xl bg-gray-100 text-gray-800 font-semibold hover:bg-blue-100 hover:text-blue-600 transition duration-200 shadow-sm"
+          onClick={handleAdmin}
         >
           Admin
         </button>
         <button
-  className="w-full h-[50px] mt-auto rounded-2xl bg-red-500 text-white font-bold hover:bg-red-600"
-  onClick={() => {
-    localStorage.removeItem("username"); // Or any auth key
-    navigate("/login"); // Redirect after logout
-  }}
->
-  Log Out
-</button>
+          className="w-full h-[50px] mt-auto rounded-2xl bg-red-500 text-white font-bold hover:bg-red-600"
+          onClick={() => {
+            localStorage.removeItem("username"); // Or any auth key
+            navigate("/login"); // Redirect after logout
+          }}
+        >
+          Log Out
+        </button>
       </div>
-
 
       {/* Main Content */}
       <div className="flex flex-col w-full lg:w-[75%] h-full px-4">
         <div className="flex flex-col items-center gap-5">
-          <p className="text-3xl sm:text-4xl font-bold text-[#d1d7fc]">Profile</p>
+          <p className="text-3xl sm:text-4xl font-bold text-[#d1d7fc]">
+            Profile
+          </p>
 
           <div className="flex flex-col md:flex-row w-full h-full gap-8 md:gap-20">
             <div className="flex w-full md:w-[60%] flex-col justify-start items-start gap-2">
               <p className="text-lg text-[#d1d7fc]">Name: John Doe</p>
-              <p className="text-lg text-[#d1d7fc]">Email: john.doe@example.com</p>
+              <p className="text-lg text-[#d1d7fc]">
+                Email: john.doe@example.com
+              </p>
               <p className="text-lg text-[#d1d7fc]">Phone: (123) 456-7890</p>
-              <p className="text-lg text-[#d1d7fc]">Address: 123 Main St, City, Country</p>
-              <p className="text-lg text-[#d1d7fc]">Bio: Passionate about learning and teaching.</p>
-              
+              <p className="text-lg text-[#d1d7fc]">
+                Address: 123 Main St, City, Country
+              </p>
+              <p className="text-lg text-[#d1d7fc]">
+                Bio: Passionate about learning and teaching.
+              </p>
 
               <div>
-      <button onClick={() => setShowModal(true)} className="bg-teal-600 text-white px-4 py-2 rounded">Edit Profile</button>
-      <EditProfileModal isOpen={showModal} onClose={() => setShowModal(false)} />
-    </div>
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="bg-teal-600 text-white px-4 py-2 rounded"
+                >
+                  Edit Profile
+                </button>
+                <EditProfileModal
+                  isOpen={showModal}
+                  onClose={() => setShowModal(false)}
+                />
+              </div>
             </div>
 
             <div className="flex w-full md:w-[40%] justify-center md:justify-end items-center">
@@ -145,7 +162,6 @@ const Profile = () => {
         <p className="text-lg text-[#d1d7fc] mt-5">Certificates:</p>
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-2 w-full px-5 overflow-y-scroll pt-5"
-
           style={{
             scrollbarWidth: "thin",
             scrollbarColor: "#9DCCFF transparent",

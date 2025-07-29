@@ -29,7 +29,7 @@ const instructors = [
 
 const InstructorPanel = () => {
   return (
-    <div className="w-[80vw]  bg-white rounded-xl shadow-lg p-4 sm:p-6">
+    <div className="w-[72.5vw]  bg-white rounded-xl shadow-lg p-4 sm:p-6">
       <h2 className="text-lg sm:text-xl font-bold mb-4 text-gray-800">🧑‍🏫 Instructors Panel</h2>
 
       <div className="overflow-x-auto">
