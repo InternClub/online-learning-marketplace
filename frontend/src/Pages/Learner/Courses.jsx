@@ -26,9 +26,9 @@ const courses = [
     instructor: "Lina",
     price: "$80",
     originalPrice: "$100",
-    image: "/Images/Group40.png", // Replace with actual image path
+    image: "/Images/Group40.png", 
     instructorImg:
-      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
+      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
   },
   {
     title: "AWS Certified Solutions Architect",
@@ -39,9 +39,9 @@ const courses = [
     instructor: "Lina",
     price: "$80",
     originalPrice: "$100",
-    image: "/Images/Group40.png", // Replace with actual image path
+    image: "/Images/Group40.png", 
     instructorImg:
-      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
+      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
   },
   {
     title: "AWS Certified Solutions Architect",
@@ -52,9 +52,9 @@ const courses = [
     instructor: "Lina",
     price: "$80",
     originalPrice: "$100",
-    image: "/Images/Group40.png", // Replace with actual image path
+    image: "/Images/Group40.png", 
     instructorImg:
-      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
+      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
   },
   {
     title: "AWS Certified Solutions Architect",
@@ -65,9 +65,9 @@ const courses = [
     instructor: "Lina",
     price: "$80",
     originalPrice: "$100",
-    image: "/Images/Group40.png", // Replace with actual image path
+    image: "/Images/Group40.png", 
     instructorImg:
-      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", // Replace with actual image path
+      "/Images/lovelyteenagegirlwithcurlyhairposingyellowtshirtmin.png", 
   },
 ];
 
@@ -181,6 +181,7 @@ const Courses = () => {
             <div
               key={index}
               className="bg-gray-100 rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+              onClick={() => navigate('/coursedetails', { state: course })}
             >
               {/* Thumbnail */}
               <img

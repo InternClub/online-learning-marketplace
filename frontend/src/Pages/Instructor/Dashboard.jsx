@@ -8,7 +8,7 @@ import Analytics from "./Analytics";
 import InstructorSchedule from "./Schedule";
 
 const Dashboard = () => {
-  const [selectedView, setSelectedView] = useState("profile");
+  const [selectedView, setSelectedView] = useState("instructorprofile");
   const [showModal, setShowModal] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <div className="flex flex-col w-full lg:w-[75%] h-full px-4">
-        {selectedView === "profile" && (
+        {selectedView === "instructorprofile" && (
           <div className="flex flex-col items-center gap-5">
             <p className="text-3xl sm:text-4xl font-bold text-[#d1d7fc]">Instructor Profile</p>
 
