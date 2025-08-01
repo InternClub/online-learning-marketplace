@@ -49,22 +49,7 @@ app.get("/", (req, res) => {
 
 app.use('/auth',AuthRouter)
 
-// Health check endpoint
-// app.get("/health", (req, res) => {
-//   res.json({
-//     status: "OK",
-//     timestamp: new Date().toISOString(),
-//     uptime: process.uptime(),
-//   });
-// });
 
-// 404 handler
-// app.use("*", (req, res) => {
-//   res.status(404).json({
-//     success: false,
-//     message: "API endpoint not found",
-//   });
-// });
 
 // Global error handler
 app.use((err, req, res, next) => {
