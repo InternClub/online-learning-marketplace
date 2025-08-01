@@ -3,6 +3,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import connectDB from "./config/database.js";
+import bodyParser from "body-parser";
+import AuthRouter from './Routes/AuthRouter.js'
 
 // Load environment variables
 dotenv.config();
@@ -12,6 +14,9 @@ const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
 connectDB();
+
+//body-parser
+app.use(bodyParser.json());
 
 // Middleware
 app.use(
@@ -41,22 +46,25 @@ app.get("/", (req, res) => {
   });
 });
 
+
+app.use('/auth',AuthRouter)
+
 // Health check endpoint
-app.get("/health", (req, res) => {
-  res.json({
-    status: "OK",
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-  });
-});
+// app.get("/health", (req, res) => {
+//   res.json({
+//     status: "OK",
+//     timestamp: new Date().toISOString(),
+//     uptime: process.uptime(),
+//   });
+// });
 
 // 404 handler
-app.use("*", (req, res) => {
-  res.status(404).json({
-    success: false,
-    message: "API endpoint not found",
-  });
-});
+// app.use("*", (req, res) => {
+//   res.status(404).json({
+//     success: false,
+//     message: "API endpoint not found",
+//   });
+// });
 
 // Global error handler
 app.use((err, req, res, next) => {
