@@ -22,6 +22,7 @@ export const signup = async (req, res) => {
         success: false,
       });
     }
+    //
     const hashedPassword = await bcrypt.hash(password, 10);
     const userModal = new User({
       firstName,
@@ -33,6 +34,7 @@ export const signup = async (req, res) => {
       role,
     });
 
+    //Generate JWT token
     const token = jwt.sign(
       { userId: userModal._id, role: userModal.role }, // payload
       process.env.JWT_SECRET, // secret key

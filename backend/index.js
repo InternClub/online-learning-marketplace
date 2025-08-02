@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/database.js";
 import bodyParser from "body-parser";
 import AuthRouter from './Routes/AuthRouter.js'
+import CourseRoutes from './Routes/CourseRouter.js';
 
 // Load environment variables
 dotenv.config();
@@ -46,9 +47,9 @@ app.get("/", (req, res) => {
   });
 });
 
-
+//Routes
 app.use('/auth',AuthRouter)
-
+app.use('/courses', CourseRoutes);
 
 
 // Global error handler
